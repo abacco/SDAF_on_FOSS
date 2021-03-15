@@ -44,3 +44,5 @@ target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputF
 target/surefire-reports/sw_dep_proj.AppTest.txt
 target/surefire-reports/TEST-sw_dep_proj.AppTest.xml
 .gitignore
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
