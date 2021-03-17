@@ -37,4 +37,53 @@ The last step of SDAF_on_FOSS is the activity to aggregate every noticed work-fl
 We are going to use some utility tools that will make us easy to collect every relevant info about
 a specific project such as RepoDriller.
 
+# Metrics (detailed) of chosen projects
+The projects shown below have been selected from the tranding section of github,
+The projects share the same details.
+Details:
+- Spoken Language : English
+- Language        : Java
+- Data Range      : March, 2021
+- Total Stars     : >= 500
+    - Some people use "stars" to indicate that they like a project, other people use them as bookmarks so they can follow what's going on with the repo later.
+- Forks           : >= 500
+
+# Project List
+Chosen Project at current time (17/03/2021) - work in progress -
+            
+- SeleniumHQ / selenium
+  A browser automation framework and ecosystem.
+  - Forks:  6,209
+  - Stars:  20,351
+  - https://github.com/SeleniumHQ/selenium.git
+
+- Netflix / zuul
+  Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more.
+  - Forks:  2,025
+  - Stars:  10,632
+  - https://github.com/Netflix/zuul.git
+
+- Oracle / graal
+  GraalVM: Run Programs Faster Anywhere
+  - Forks:  1,114
+  - Stars:  14,771
+  - https://github.com/oracle/graal.git
+
+- Google / tsunami-security-scanner
+  Tsunami is a general purpose network security scanner with an extensible plugin system for detecting high severity vulnerabilities with high confidence.
+  - Forks:  718
+  - Stars:  6,854
+  - https://github.com/oracle/graal.git
+
+- Azure / azure-sdk-for-java
+  This repository is for active development of the Azure SDK for Java. For consumers of the SDK we recommend visiting our public developer docs at https://docs.microsoft.com/en-us/java/azure/ or our versioned developer docs at https://azure.github.io/azure-sdk-for-java.
+  - Forks: 959
+  - Stars: 830
+  - https://github.com/Azure/azure-sdk-for-java.git
+
+- Shopizer-ecommerce / shopizer
+  Shopizer java e-commerce software
+  - Forks: 1,913
+  - Stars: 1,991
+  - https://github.com/shopizer-ecommerce/shopizer.git
 
