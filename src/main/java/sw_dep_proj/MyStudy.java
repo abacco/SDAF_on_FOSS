@@ -8,6 +8,8 @@ import org.repodriller.persistence.csv.CSVFile;
 import org.repodriller.scm.GitRemoteRepository;
 import org.repodriller.scm.GitRepository;
 
+
+// ref : https://github.com/mauricioaniche/repodriller/blob/master/manual/repodriller-2.0.0.md
 public class MyStudy implements Study{
 
     // RepoDriller needs a Study. The interface is quite simple: a single execute() method:
@@ -22,7 +24,6 @@ public class MyStudy implements Study{
     public void execute() {
         // TODO Auto-generated method stub
         printDevNameForEachCommit();
-        
     }
     
     // print the name of the developers for each commit.
