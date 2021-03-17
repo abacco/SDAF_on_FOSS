@@ -49,3 +49,15 @@ buildNumber.properties
 
 # bin folder
 bin/
+
+# .settings
+*.settings
+
+# .classpath
+*.classpath
+
+# .project
+*.project
+
+# .factorypath
+*.factorypath
