@@ -18,6 +18,16 @@
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/com.github.mauricioaniche/ck -->
+    <!-- CK calculates class-level and metric-level code metrics
+          in Java projects by means of static analysis
+          (i.e. no need for compiled code)
+    -->
+    <dependency>
+      <groupId>com.github.mauricioaniche</groupId>
+      <artifactId>ck</artifactId>
+      <version>0.6.3</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

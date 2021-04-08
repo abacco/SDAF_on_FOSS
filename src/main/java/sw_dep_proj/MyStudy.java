@@ -5,6 +5,7 @@ import org.repodriller.RepositoryMining;
 import org.repodriller.Study;
 import org.repodriller.filter.range.Commits;
 import org.repodriller.persistence.csv.CSVFile;
+import org.repodriller.scm.CollectConfiguration;
 import org.repodriller.scm.GitRemoteRepository;
 import org.repodriller.scm.GitRepository;
 
@@ -17,7 +18,15 @@ public class MyStudy implements Study{
 
         new RepoDriller().start(new MyStudy());
 	}
-    
+
+	// define wich data to extract
+    public void b(){
+        CollectConfiguration cf = new CollectConfiguration();
+
+        cf.basicOnly();
+    }
+
+
     // configure here your study, 
     // projects to analyze, metrics to be executed, and output files
 
