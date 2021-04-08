@@ -33,7 +33,8 @@ public class MyStudy implements Study{
     @Override
     public void execute() {
         // TODO Auto-generated method stub
-        printDevNameForEachCommit();
+        //printDevNameForEachCommit();
+        testOnSelenium();
     }
     
     // print the name of the developers for each commit.
@@ -57,6 +58,20 @@ public class MyStudy implements Study{
 		    .mine();
     }
 
+/*    public void testOnSelenium(){
+        new RepositoryMining()
+                .in(GitRepository.singleProject("https://github.com/SeleniumHQ/selenium.git")) // let's test this project
+                .through(Commits.all())
+                .process(new DevelopersVisitor(), new CSVFile("src/main/java/sw_dep_proj/csv/devsCommitsSelenium.csv")) // output folder
+                .mine();
+    }*/
+
+    public void testOnSelenium(){
+        GitRemoteRepository.hostedOn("https://github.com/SeleniumHQ/selenium.git")
+                            .inTempDir("src/main/java/sw_dep_proj/tmpDirStudy/Selenium")
+                            .asBareRepos()
+                            .buildAsSCMRepository();
+    }
     public void a(){
         // GitRemoteRepository
 		//     .hostedOn(gitUrl)							// URL like: https://github.com/mauricioaniche/repodriller.git
