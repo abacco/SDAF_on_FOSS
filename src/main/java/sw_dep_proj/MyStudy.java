@@ -34,7 +34,9 @@ public class MyStudy implements Study{
     public void execute() {
         // TODO Auto-generated method stub
         //printDevNameForEachCommit();
-        testOnSelenium();
+
+        //testOnSelenium(); -- serve fare un controllo nel caso in cui la path esista - usa un boolean
+        retrievingSeleniumCommits();
     }
     
     // print the name of the developers for each commit.
@@ -71,6 +73,15 @@ public class MyStudy implements Study{
                             .inTempDir("src/main/java/sw_dep_proj/tmpDirStudy/Selenium")
                             .asBareRepos()
                             .buildAsSCMRepository();
+    }
+
+    // implementa i filtri per i vari commit
+    public void retrievingSeleniumCommits(){
+        new RepositoryMining()
+                .in(GitRepository.singleProject("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\tmpDirStudy\\Selenium")) // let's test this project
+                .through(Commits.all())
+                .process(new DevelopersVisitor(), new CSVFile("src/main/java/sw_dep_proj/csv/seleniumDevsCommits.csv")) // output folder
+                .mine();
     }
     public void a(){
         // GitRemoteRepository
