@@ -14,7 +14,8 @@ public class MyStudy implements Study{
 
     // RepoDriller needs a Study. The interface is quite simple: a single execute() method:
     public static void main(String[] args) {
-		new RepoDriller().start(new MyStudy());
+
+        new RepoDriller().start(new MyStudy());
 	}
     
     // configure here your study, 
