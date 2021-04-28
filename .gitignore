@@ -123,3 +123,4 @@ bin/
 /sdaf_on_foss.iml
 /.vscode/settings.json
 /.idea/vcs.xml
+.idea/
