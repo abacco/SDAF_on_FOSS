@@ -10,6 +10,8 @@ import org.repodriller.scm.SCMRepository;
 // Inside of process(), we print the commit hash and the name of the developer.
 public class DevelopersVisitor implements CommitVisitor{
 
+
+    // write all the useful info to gather data
     @Override
     public void process(SCMRepository repo, Commit commit, PersistenceMechanism writer) {
         writer.write(
