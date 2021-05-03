@@ -13,18 +13,15 @@ import org.repodriller.scm.CollectConfiguration;
 import org.repodriller.scm.GitRemoteRepository;
 import org.repodriller.scm.GitRepository;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Calendar;
 
 
 // ref : https://github.com/mauricioaniche/repodriller/blob/master/manual/repodriller-2.0.0.md
 public class MyStudy implements Study{
-
-    private boolean seleniumMined = false;
-    private boolean netflixMined = false;
-    private boolean azureMined = false;
-    private boolean oracleMined = false;
-    private boolean shopizerMined = false;
 
     private final String azureRepo = "https://github.com/Azure/azure-sdk-for-java.git";
     private final String oracleRepo = "https://github.com/oracle/graal.git";
@@ -38,12 +35,24 @@ public class MyStudy implements Study{
         new RepoDriller().start(new MyStudy());
     }
 
-    // configure here your study,
-    // projects to analyze, metrics to be executed, and output files
-    @Override
-    public void execute() {
 
-        //buildRepo(seleniumRepo, "selenium");
+    public void mineRepos(){
+
+        Path azurePath = Paths.get("src/main/java/sw_dep_proj/tmpDirStudy/azure");
+        boolean azureMined = Files.exists(azurePath);
+
+        Path seleniumPath = Paths.get("src/main/java/sw_dep_proj/tmpDirStudy/selenium");
+        boolean seleniumMined = Files.exists(seleniumPath);
+
+        Path netflixPath = Paths.get("src/main/java/sw_dep_proj/tmpDirStudy/netflix");
+        boolean netflixMined = Files.exists(netflixPath);
+
+        Path oraclePath = Paths.get("src/main/java/sw_dep_proj/tmpDirStudy/oracle");
+        boolean oracleMined = Files.exists(oraclePath);
+
+        Path shopizerPath = Paths.get("src/main/java/sw_dep_proj/tmpDirStudy/shopizer");
+        boolean shopizerMined = Files.exists(shopizerPath);
+
         if(!seleniumMined && !netflixMined && !azureMined && !oracleMined && !shopizerMined ){
             buildRepo(seleniumRepo, "selenium");
             buildRepo(netflixRepo, "netflix");
@@ -51,13 +60,19 @@ public class MyStudy implements Study{
             buildRepo(oracleRepo, "oracle");
             buildRepo(shopizerRepo, "shopizer");
         }
-        else {
+    }
+    // configure here your study,
+    // projects to analyze, metrics to be executed, and output files
+    @Override
+    public void execute() {
+
+        //mineRepos();
+        System.out.println("repo mined - retrieving commits");
             retrieveRepoCommits("selenium", "seleniumCSV");
             retrieveRepoCommits("netflix", "netflixCSV");
             retrieveRepoCommits("azure", "azureCSV");
             retrieveRepoCommits("oracle", "oracleCSV");
             retrieveRepoCommits("shopizer", "shopizerCSV");
-        }
     }
 
     public void buildRepo(String githubLink, String dir){
@@ -75,7 +90,7 @@ public class MyStudy implements Study{
         toCal.set(2021, 1, 1);
 
         new RepositoryMining()
-                .in(GitRepository.singleProject("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\tmpStudyDir\\" + projectRepoOutput)) // let's test this project
+                .in(GitRepository.singleProject("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\tmpDirStudy\\" + projectRepoOutput)) // let's test this project
                 .through(Commits.betweenDates(fromCal, toCal))
                 .filters(
                         new OnlyModificationsWithFileTypes(Arrays.asList(".java")),
