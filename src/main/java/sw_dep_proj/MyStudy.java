@@ -66,7 +66,7 @@ public class MyStudy implements Study{
     @Override
     public void execute() {
 
-        //mineRepos();
+        mineRepos();
         System.out.println("repo mined - retrieving commits");
             retrieveRepoCommits("selenium", "seleniumCSV");
             retrieveRepoCommits("netflix", "netflixCSV");
