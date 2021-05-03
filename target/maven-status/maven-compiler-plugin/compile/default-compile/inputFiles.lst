@@ -1,3 +1,22 @@
-C:\Users\abacc.LAPTOP-I2DLL2FP\Desktop\SW_DEP\project and java example\SDAF_on_FOSS\src\main\java\sw_dep_proj\App.java
-C:\Users\abacc.LAPTOP-I2DLL2FP\Desktop\SW_DEP\project and java example\SDAF_on_FOSS\src\main\java\sw_dep_proj\MyStudy.java
-C:\Users\abacc.LAPTOP-I2DLL2FP\Desktop\SW_DEP\project and java example\SDAF_on_FOSS\src\main\java\sw_dep_proj\DevelopersVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\ClassParser.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\MyStudy.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\InstanceVariableVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\MethodInvocationsVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\DevelopersVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\CodeParser.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\MethodVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\beans\PackageBean.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\ClassVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\InvocationParser.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\ClassSerializer.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\beans\InstanceVariableBean.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\metrics\CKMetrics.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\PackageParser.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\beans\ClassBean.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\beans\MethodBean.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\MethodParser.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\InvocationVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\InstanceVariableParser.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\metrics\FileUtility.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\AssertVisitor.java
+C:\Users\bacco\OneDrive\Desktop\progetti uni\SDAF_on_FOSS\src\main\java\sw_dep_proj\parser\NameVisitor.java

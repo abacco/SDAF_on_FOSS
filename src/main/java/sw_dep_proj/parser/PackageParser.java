@@ -1,10 +1,7 @@
-package parser;
+package sw_dep_proj.parser;
 
 import java.util.ArrayList;
 import java.util.Vector;
-
-import beans.ClassBean;
-import beans.PackageBean;
 
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IImportDeclaration;
@@ -12,40 +9,42 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
+import sw_dep_proj.beans.ClassBean;
+import sw_dep_proj.beans.PackageBean;
 
 public class PackageParser {
 
-	public static PackageBean parse(IPackageFragment pPackage)  {
-		PackageBean packageBean = new PackageBean();
-		CodeParser codeParser = new CodeParser();
-		String textualContent="";
-		
-		ArrayList<ClassBean> classes = new ArrayList<ClassBean>();
+    public static PackageBean parse(IPackageFragment pPackage)  {
+        PackageBean packageBean = new PackageBean();
+        CodeParser codeParser = new CodeParser();
+        String textualContent="";
 
-		packageBean.setName(pPackage.getElementName());
+        ArrayList<ClassBean> classes = new ArrayList<ClassBean>();
 
-		try {
-			for(ICompilationUnit cu: pPackage.getCompilationUnits()) {
-				
-				textualContent+=cu.getSource();
-				
-				CompilationUnit parsed = codeParser.createParser(cu.getSource());
-				TypeDeclaration typeDeclaration = (TypeDeclaration)parsed.types().get(0);
+        packageBean.setName(pPackage.getElementName());
 
-				Vector<String> imported = new Vector<String>();
+        try {
+            for(ICompilationUnit cu: pPackage.getCompilationUnits()) {
 
-				for(IImportDeclaration importedResource: cu.getImports())
-					imported.add(importedResource.getElementName());
+                textualContent+=cu.getSource();
 
-				classes.add(ClassParser.parse(typeDeclaration, packageBean.getName(), imported));
-			}
-			
-			packageBean.setTextContent(textualContent);
-		
-		} catch (JavaModelException e) {
-			e.printStackTrace();
-		}
+                CompilationUnit parsed = codeParser.createParser(cu.getSource());
+                TypeDeclaration typeDeclaration = (TypeDeclaration)parsed.types().get(0);
 
-		return packageBean;
-	}
+                Vector<String> imported = new Vector<String>();
+
+                for(IImportDeclaration importedResource: cu.getImports())
+                    imported.add(importedResource.getElementName());
+
+                classes.add(ClassParser.parse(typeDeclaration, packageBean.getName(), imported));
+            }
+
+            packageBean.setTextContent(textualContent);
+
+        } catch (JavaModelException e) {
+            e.printStackTrace();
+        }
+
+        return packageBean;
+    }
 }

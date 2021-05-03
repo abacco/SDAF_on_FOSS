@@ -1,15 +1,13 @@
 package sw_dep_proj.metrics;
 
-import sw_dep_proj.beans.ClassBean;
-import sw_dep_proj.beans.InstanceVariableBean;
-import sw_dep_proj.beans.MethodBean;
-import sw_dep_proj.beans.PackageBean;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import sw_dep_proj.beans.*;
 
 public class CKMetrics {
 

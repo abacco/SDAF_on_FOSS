@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Vector;
 
 public class PackageBean {
-
     private String name;
     private Collection<ClassBean> classes;
     private String textContent;

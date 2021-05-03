@@ -1,4 +1,4 @@
-package parser;
+package sw_dep_proj.parser;
 
 import org.eclipse.jdt.core.dom.*;
 
@@ -9,52 +9,52 @@ import org.eclipse.jdt.core.dom.*;
  */
 
 public class CodeParser {
-	private char[] charClass;
-	private CompilationUnit unit;
-	private ASTParser parser;
+    private char[] charClass;
+    private CompilationUnit unit;
+    private ASTParser parser;
 
-	public CodeParser(){					
-		
-	}
+    public CodeParser(){
 
-	public CodeParser (String pClassToAnalyze) { 
-		this.charClass=pClassToAnalyze.toCharArray();
-	}	
+    }
+
+    public CodeParser (String pClassToAnalyze) {
+        this.charClass=pClassToAnalyze.toCharArray();
+    }
 
 
-	/**
-	 * This method allows to create a parser for the AST;
-	 * 
-	 * @param 
-	 * 			a String representation of a Class;
-	 * @return
-	 * 			a CompilationUnit to work on;
-	 */
-	public CompilationUnit createParser() {
-		parser = ASTParser.newParser(AST.JLS4);
-		parser.setKind(ASTParser.K_COMPILATION_UNIT);
-		parser.setSource(this.charClass); // set source
-		parser.setResolveBindings(true); // we need bindings later on
-		return (CompilationUnit) parser.createAST(null);
-	}
+    /**
+     * This method allows to create a parser for the AST;
+     *
+     * @param
+     * 			a String representation of a Class;
+     * @return
+     * 			a CompilationUnit to work on;
+     */
+    public CompilationUnit createParser() {
+        parser = ASTParser.newParser(AST.JLS4);
+        parser.setKind(ASTParser.K_COMPILATION_UNIT);
+        parser.setSource(this.charClass); // set source
+        parser.setResolveBindings(true); // we need bindings later on
+        return (CompilationUnit) parser.createAST(null);
+    }
 
-	public TypeDeclaration createParser(String pMethod, int pType) {
-		parser = ASTParser.newParser(AST.JLS4);
-		parser.setKind(pType);
-		parser.setSource(pMethod.toCharArray()); // set source
+    public TypeDeclaration createParser(String pMethod, int pType) {
+        parser = ASTParser.newParser(AST.JLS4);
+        parser.setKind(pType);
+        parser.setSource(pMethod.toCharArray()); // set source
 
-		return (TypeDeclaration) parser.createAST(null);
-	}
+        return (TypeDeclaration) parser.createAST(null);
+    }
 
-	public CompilationUnit createParser(String pClass) {
-		parser = ASTParser.newParser(AST.JLS4);
-		parser.setKind(ASTParser.K_COMPILATION_UNIT);
-		parser.setSource(pClass.toCharArray()); // set source
-		parser.setResolveBindings(true); // we need bindings later on
-		return (CompilationUnit) parser.createAST(null);
-	}
+    public CompilationUnit createParser(String pClass) {
+        parser = ASTParser.newParser(AST.JLS4);
+        parser.setKind(ASTParser.K_COMPILATION_UNIT);
+        parser.setSource(pClass.toCharArray()); // set source
+        parser.setResolveBindings(true); // we need bindings later on
+        return (CompilationUnit) parser.createAST(null);
+    }
 
-	public CompilationUnit getCompilationUnit(){
-		return this.unit;
-	}
+    public CompilationUnit getCompilationUnit(){
+        return this.unit;
+    }
 }

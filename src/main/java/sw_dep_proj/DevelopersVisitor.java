@@ -1,5 +1,6 @@
 package sw_dep_proj;
 
+
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.repodriller.domain.Commit;
@@ -7,13 +8,14 @@ import org.repodriller.persistence.PersistenceMechanism;
 import org.repodriller.scm.CommitVisitor;
 import org.repodriller.scm.RepositoryFile;
 import org.repodriller.scm.SCMRepository;
-import parser.ClassParser;
-import parser.CodeParser;
+
 
 import sw_dep_proj.beans.ClassBean;
 import sw_dep_proj.beans.PackageBean;
 import sw_dep_proj.metrics.CKMetrics;
 import sw_dep_proj.metrics.FileUtility;
+import sw_dep_proj.parser.ClassParser;
+import sw_dep_proj.parser.CodeParser;
 
 import java.io.IOException;
 import java.util.List;
