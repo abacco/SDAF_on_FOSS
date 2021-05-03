@@ -26,13 +26,11 @@ public class MyStudy implements Study{
     private boolean oracleMined = false;
     private boolean shopizerMined = false;
 
-    private String azureRepo = "https://github.com/Azure/azure-sdk-for-java.git";
-    private String oracleRepo = "https://github.com/oracle/graal.git";
-    private String netflixRepo = "https://github.com/Netflix/zuul.git";
-    private String seleniumRepo = "https://github.com/SeleniumHQ/selenium.git";
-    private String shopizerRepo = "https://github.com/shopizer-ecommerce/shopizer.git";
-
-
+    private final String azureRepo = "https://github.com/Azure/azure-sdk-for-java.git";
+    private final String oracleRepo = "https://github.com/oracle/graal.git";
+    private final String netflixRepo = "https://github.com/Netflix/zuul.git";
+    private final String seleniumRepo = "https://github.com/SeleniumHQ/selenium.git";
+    private final String shopizerRepo = "https://github.com/shopizer-ecommerce/shopizer.git";
 
     // RepoDriller needs a Study. The interface is quite simple: a single execute() method:
     public static void main(String[] args) {
@@ -45,13 +43,13 @@ public class MyStudy implements Study{
     @Override
     public void execute() {
 
-
-        if(seleniumMined && netflixMined && azureMined && oracleMined && shopizerMined ){
-            buildRepo(seleniumRepo);
-            buildRepo(netflixRepo);
-            buildRepo(azureRepo);
-            buildRepo(oracleRepo);
-            buildRepo(shopizerRepo);
+        //buildRepo(seleniumRepo, "selenium");
+        if(!seleniumMined && !netflixMined && !azureMined && !oracleMined && !shopizerMined ){
+            buildRepo(seleniumRepo, "selenium");
+            buildRepo(netflixRepo, "netflix");
+            buildRepo(azureRepo, "azure");
+            buildRepo(oracleRepo, "oracle");
+            buildRepo(shopizerRepo, "shopizer");
         }
         else {
             retrieveRepoCommits("selenium", "seleniumCSV");
@@ -62,9 +60,9 @@ public class MyStudy implements Study{
         }
     }
 
-    public void buildRepo(String githubLink){
+    public void buildRepo(String githubLink, String dir){
         GitRemoteRepository.hostedOn(githubLink)
-                .inTempDir("src/main/java/sw_dep_proj/tmpDirStudy/Azure")
+                .inTempDir("src/main/java/sw_dep_proj/tmpDirStudy/" + dir)
                 .asBareRepos()
                 .buildAsSCMRepository();
     }
