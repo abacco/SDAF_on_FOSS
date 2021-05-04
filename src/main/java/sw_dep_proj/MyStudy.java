@@ -23,12 +23,6 @@ import java.util.Calendar;
 // ref : https://github.com/mauricioaniche/repodriller/blob/master/manual/repodriller-2.0.0.md
 public class MyStudy implements Study{
 
-    private final String azureRepo = "https://github.com/Azure/azure-sdk-for-java.git";
-    private final String oracleRepo = "https://github.com/oracle/graal.git";
-    private final String netflixRepo = "https://github.com/Netflix/zuul.git";
-    private final String seleniumRepo = "https://github.com/SeleniumHQ/selenium.git";
-    private final String shopizerRepo = "https://github.com/shopizer-ecommerce/shopizer.git";
-
     // RepoDriller needs a Study. The interface is quite simple: a single execute() method:
     public static void main(String[] args) {
 
@@ -54,10 +48,15 @@ public class MyStudy implements Study{
         boolean shopizerMined = Files.exists(shopizerPath);
 
         if(!seleniumMined && !netflixMined && !azureMined && !oracleMined && !shopizerMined ){
+            String seleniumRepo = "https://github.com/SeleniumHQ/selenium.git";
             buildRepo(seleniumRepo, "selenium");
+            String netflixRepo = "https://github.com/Netflix/zuul.git";
             buildRepo(netflixRepo, "netflix");
+            String azureRepo = "https://github.com/Azure/azure-sdk-for-java.git";
             buildRepo(azureRepo, "azure");
+            String oracleRepo = "https://github.com/oracle/graal.git";
             buildRepo(oracleRepo, "oracle");
+            String shopizerRepo = "https://github.com/shopizer-ecommerce/shopizer.git";
             buildRepo(shopizerRepo, "shopizer");
         }
     }
@@ -82,6 +81,7 @@ public class MyStudy implements Study{
                 .buildAsSCMRepository();
     }
 
+    // from 2020 to current year
     public void retrieveRepoCommits(String projectRepoOutput, String projectCsvOutput){
         Calendar fromCal = Calendar.getInstance();
         fromCal.set(2020, 1,1);
