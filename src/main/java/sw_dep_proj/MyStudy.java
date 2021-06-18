@@ -36,7 +36,7 @@ public class MyStudy implements org.repodriller.Study {
         final String realPath = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\" + projectName;
 
         final Calendar fromCal = Calendar.getInstance();
-        fromCal.set(2021, 1, 1);
+        fromCal.set(2020, 1, 1);
 
         final Calendar toCal = Calendar.getInstance();
         toCal.set(2021, 6, 1);
