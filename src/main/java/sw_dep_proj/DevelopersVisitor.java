@@ -37,11 +37,10 @@ public class DevelopersVisitor implements CommitVisitor {
         // We want to compute metrics for all classes of the repository.
         List<RepositoryFile> files = scmRepository.getScm().files();
 
-        int i = 0;
         for (RepositoryFile file : files) { // So, for each file available in the repository,
 
             if (file.getFullName().contains(".java")) { // we check if the file is a java file, i.e., we do not want to consider configuration files and others.
-                i++;
+
                 // Afterwards, we start parsing the file.
                 CompilationUnit parsed;
                 try {
@@ -57,11 +56,12 @@ public class DevelopersVisitor implements CommitVisitor {
                     // those defined in the package 'beans'
 
                     Vector<String> imports = new Vector<String>();
-                    for (Object importedResource : parsed.imports())
+                    for (Object importedResource : parsed.imports()) {
                         imports.add(importedResource.toString());
+                    }
 
                     PackageBean packageBean = new PackageBean();
-                    //packageBean.setName(parsed.getPackage().getName().getFullyQualifiedName());
+                    packageBean.setName(parsed.getPackage().getName().getFullyQualifiedName());
 
                     ClassBean classBean = ClassParser.parse(typeDeclaration, packageBean.getName(), imports);
                     classBean.setPathToClass(file.getFile().getAbsolutePath());
@@ -98,7 +98,6 @@ public class DevelopersVisitor implements CommitVisitor {
                 }
             }
         }
-
     }
 }
 

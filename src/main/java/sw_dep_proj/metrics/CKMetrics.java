@@ -303,8 +303,13 @@ public class CKMetrics {
             numberOfAttributesReferenced += method.getUsedInstanceVariables().size();
         }
 
-        coh = numberOfAttributesReferenced / (numberOfMethods*numberOfAttributes);
-
+        try {
+            coh = numberOfAttributesReferenced / (numberOfMethods * numberOfAttributes);
+        }
+        catch (ArithmeticException ae){
+            coh = 0;
+            return coh;
+        }
         return coh;
     }
 
