@@ -41,7 +41,7 @@ public class MyStudy implements org.repodriller.Study {
         final Calendar toCal = Calendar.getInstance();
         toCal.set(2021, 6, 1);
 
-        Thread azureThread = new Thread() {
+        Thread innerThread = new Thread() {
             public void run() {
                 new RepositoryMining()
                         .in(GitRepository.singleProject(realPath))
@@ -52,7 +52,7 @@ public class MyStudy implements org.repodriller.Study {
             }
         };
 
-        azureThread.start();
+        innerThread.start();
     }
 
 }

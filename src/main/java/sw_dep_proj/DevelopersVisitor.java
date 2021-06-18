@@ -31,15 +31,17 @@ public class DevelopersVisitor implements CommitVisitor {
         // We will need a parser to mine the structural properties of a class.
         CodeParser codeParser = new CodeParser();
         if(!fal){
-            writer.write("commit hash", "Class Name", "LOC", "LCOM", "CBO");
+            writer.write("Commit Hash", "Class Name", "LOC", "LCOM", "CBO", "ELOC", "COH", "McCabe", "TCC", "HALSTAD", "MESSAGE");
             fal = true;
         }
         // We want to compute metrics for all classes of the repository.
         List<RepositoryFile> files = scmRepository.getScm().files();
+
+        int i = 0;
         for (RepositoryFile file : files) { // So, for each file available in the repository,
 
             if (file.getFullName().contains(".java")) { // we check if the file is a java file, i.e., we do not want to consider configuration files and others.
-
+                i++;
                 // Afterwards, we start parsing the file.
                 CompilationUnit parsed;
                 try {
@@ -54,15 +56,12 @@ public class DevelopersVisitor implements CommitVisitor {
                     // understandability we are going to create more easily comprehensible objects, i.e.,
                     // those defined in the package 'beans'
 
-
                     Vector<String> imports = new Vector<String>();
                     for (Object importedResource : parsed.imports())
                         imports.add(importedResource.toString());
 
-
                     PackageBean packageBean = new PackageBean();
                     //packageBean.setName(parsed.getPackage().getName().getFullyQualifiedName());
-
 
                     ClassBean classBean = ClassParser.parse(typeDeclaration, packageBean.getName(), imports);
                     classBean.setPathToClass(file.getFile().getAbsolutePath());
@@ -73,21 +72,33 @@ public class DevelopersVisitor implements CommitVisitor {
                     int LCOM = CKMetrics.getLCOM2(classBean);
                     int CBO = CKMetrics.getCBO(classBean);
 
+                    int ELOC = CKMetrics.getELOC(classBean);
+                    int COH = CKMetrics.getCoh(classBean);
+                    int WMC = CKMetrics.getWMC(classBean);
+
+                    int TCC = CKMetrics.getTCC(classBean);
+                    double HALSTAD = CKMetrics.getHalsteadVolume(classBean);
                     // Now, let's pretty-print our results.
                     writer.write(
                             commit.getHash(),
                             classBean.getName(),
                             LOC,
                             LCOM,
-                            CBO
+                            CBO,
+                            ELOC,
+                            COH,
+                            WMC,
+                            TCC,
+                            HALSTAD,
+                            commit.getMsg()
                     );
 
-                    // qua posso creare un altro csv dove metto la media di queste statistiche
                 } catch (IOException e) {
-                        e.printStackTrace();
+                    System.out.println(e.getMessage());
                 }
             }
         }
+
     }
 }
 
