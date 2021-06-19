@@ -319,27 +319,33 @@ public class CKMetrics {
         int totalPublicMethods = 0;
         int connectedPublicMethodPairs = 0;
 
-        Vector<MethodBean> methods = (Vector<MethodBean>) cb.getMethods();
-        for(int i=0; i<methods.size(); i++) {
-            if(methods.elementAt(i).getVisibility() == 2) { // code 2 means public method
-                totalPublicMethods++;
+        try {
+            Vector<MethodBean> methods = (Vector<MethodBean>) cb.getMethods();
+            for (int i = 0; i < methods.size(); i++) {
+                if (methods.elementAt(i).getVisibility() == 2) { // code 2 means public method
+                    totalPublicMethods++;
 
-                for (int j=i+1; j<methods.size(); j++) {
-                    if(methods.elementAt(j).getVisibility() == 2) {
+                    for (int j = i + 1; j < methods.size(); j++) {
+                        if (methods.elementAt(j).getVisibility() == 2) {
 
-                        if( shareAnInstanceVariable(methods.elementAt(i), methods.elementAt(j)) ) {
-                            connectedPublicMethodPairs++;
-                        } else {
-                            if(existDependencyBetween(methods.elementAt(i), methods.elementAt(j))) {
+                            if (shareAnInstanceVariable(methods.elementAt(i), methods.elementAt(j))) {
                                 connectedPublicMethodPairs++;
+                            } else {
+                                if (existDependencyBetween(methods.elementAt(i), methods.elementAt(j))) {
+                                    connectedPublicMethodPairs++;
+                                }
                             }
                         }
                     }
                 }
             }
+            return (connectedPublicMethodPairs/totalPublicMethods);
         }
-
-        return (connectedPublicMethodPairs/totalPublicMethods);
+        catch(ArithmeticException ae){
+            System.out.println("division by zero encountered: not admissible: returning 0 as false: no methods connected to each other");
+            return 0;
+        }
+        //return (connectedPublicMethodPairs/totalPublicMethods);
     }
 
     // LCC (Loose Class Cohesion):
@@ -700,19 +706,25 @@ public class CKMetrics {
 
     private static boolean existDependencyBetween(MethodBean m1, MethodBean m2){
 
-        for(MethodBean call: m1.getMethodCalls()) {
-            if( (call.getName().equals(m2.getName())) && (call.getParameters().size() == m2.getParameters().size()) ) {
-                return true;
+        try {
+            for (MethodBean call : m1.getMethodCalls()) {
+                if ((call.getName().equals(m2.getName())) && (call.getParameters().size() == m2.getParameters().size())) {
+                    return true;
+                }
             }
-        }
 
-        for(MethodBean call: m2.getMethodCalls()) {
-            if( (call.getName().equals(m1.getName())) && (call.getParameters().size() == m1.getParameters().size()) ) {
-                return true;
+            for (MethodBean call : m2.getMethodCalls()) {
+                if ((call.getName().equals(m1.getName())) && (call.getParameters().size() == m1.getParameters().size())) {
+                    return true;
+                }
             }
+            return false;
         }
-
-        return false;
+        catch (NullPointerException npe){
+            System.out.println("NullPointerException caught: it does not exist a dependency: returning false");
+            return false;
+        }
+        //return false;
     }
 
     private static boolean shareAnInstanceVariable(MethodBean m1, MethodBean m2){
