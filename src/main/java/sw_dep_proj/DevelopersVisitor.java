@@ -50,7 +50,9 @@ public class DevelopersVisitor implements CommitVisitor {
                     // Just for your information, the following instruction means that we will
                     // analyze only the main class in a file, i.e., we DO NOT consider inner classes.
                     TypeDeclaration typeDeclaration = (TypeDeclaration) parsed.types().get(0);
-
+                    if(typeDeclaration.getTypes().length == 0){
+                        System.out.println("No main class in this file, continuing ...");
+                    }
                     // While we could already use the TypeDeclaration to compute metrics, for the sake of
                     // understandability we are going to create more easily comprehensible objects, i.e.,
                     // those defined in the package 'beans'
@@ -78,6 +80,8 @@ public class DevelopersVisitor implements CommitVisitor {
 
                     int TCC = CKMetrics.getTCC(classBean);
                     double HALSTAD = CKMetrics.getHalsteadVolume(classBean);
+                    int intHalstad = (int) HALSTAD;
+
                     // Now, let's pretty-print our results.
                     writer.write(
                             commit.getHash(),
@@ -89,12 +93,15 @@ public class DevelopersVisitor implements CommitVisitor {
                             COH,
                             WMC,
                             TCC,
-                            HALSTAD,
+                            intHalstad,
                             commit.getMsg()
                     );
 
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
+                } catch (IOException ioe){
+                    System.out.println("Reading failed");
+                }
+                catch (IndexOutOfBoundsException iob){
+                    System.out.println("IOB caught, continuing with another file");
                 }
             }
         }

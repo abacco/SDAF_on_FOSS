@@ -724,7 +724,6 @@ public class CKMetrics {
             System.out.println("NullPointerException caught: it does not exist a dependency: returning false");
             return false;
         }
-        //return false;
     }
 
     private static boolean shareAnInstanceVariable(MethodBean m1, MethodBean m2){
