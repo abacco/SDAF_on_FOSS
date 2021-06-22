@@ -2,6 +2,7 @@ package sw_dep_proj;
 
 import org.repodriller.RepoDriller;
 import org.repodriller.RepositoryMining;
+
 import org.repodriller.filter.range.Commits;
 import org.repodriller.persistence.csv.CSVFile;
 import org.repodriller.scm.GitRepository;
@@ -18,26 +19,19 @@ public class MyStudy implements org.repodriller.Study {
     }
 
     public void execute() {
-        try {
 
             retrieveDataThread("shopizer", "shopizer");
-            retrieveDataThread("azure-sdk-for-java", "azure");
+            /*retrieveDataThread("azure-sdk-for-java", "azure");
             retrieveDataThread("zuul", "netflix");
-            retrieveDataThread("graal", "graal");
-            retrieveDataThread("selenium","selenium");
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            Thread.currentThread().interrupt();
-        }
+            retrieveDataThread("graal", "graal");*/
     }
 
-    public void retrieveDataThread(String projectName, final String outputFile) throws InterruptedException {
+    public void retrieveDataThread(String projectName, final String outputFile) {
 
         final String realPath = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\" + projectName;
 
         final Calendar fromCal = Calendar.getInstance();
-        fromCal.set(2020, 1, 1);
+        fromCal.set(2021, 5, 1);
 
         final Calendar toCal = Calendar.getInstance();
         toCal.set(2021, 6, 1);
@@ -54,6 +48,8 @@ public class MyStudy implements org.repodriller.Study {
         };
 
         innerThread.start();
+
     }
 
+    // C:\Users\bacco\AppData\Local\Temp\
 }

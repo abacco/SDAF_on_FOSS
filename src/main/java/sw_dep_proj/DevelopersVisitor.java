@@ -31,7 +31,7 @@ public class DevelopersVisitor implements CommitVisitor {
         // We will need a parser to mine the structural properties of a class.
         CodeParser codeParser = new CodeParser();
         if(!fal){
-            writer.write("Commit Hash", "Class Name", "LOC", "LCOM", "CBO", "ELOC", "COH", "McCabe", "TCC", "HALSTAD", "MESSAGE");
+            writer.write("Commit Hash", "Class Name", "LOC", "LCOM", "CBO", "ELOC", "COH", "McCabe", "TCC", "HALSTAD", "DIT", "NOC", "RFC", "MESSAGE");
             fal = true;
         }
         // We want to compute metrics for all classes of the repository.
@@ -68,6 +68,9 @@ public class DevelopersVisitor implements CommitVisitor {
                     ClassBean classBean = ClassParser.parse(typeDeclaration, packageBean.getName(), imports);
                     classBean.setPathToClass(file.getFile().getAbsolutePath());
 
+                    Vector<ClassBean> system = new Vector<>();
+                    system.add(classBean);
+
                     // Once converted the files read in our beans, we can compute metrics in a super-easy way.
                     // NB: The class 'CKMetrics' contains a number of other metrics!
                     int LOC = CKMetrics.getLOC(classBean);
@@ -82,9 +85,13 @@ public class DevelopersVisitor implements CommitVisitor {
                     double HALSTAD = CKMetrics.getHalsteadVolume(classBean);
                     int intHalstad = (int) HALSTAD;
 
+                    int DIT = CKMetrics.getDIT(classBean, system, 0);
+                    int NOC = CKMetrics.getNOC(classBean, system);
+                    int RFC = CKMetrics.getRFC(classBean);
+
                     // Now, let's pretty-print our results.
                     writer.write(
-                            commit.getHash(),
+                            commit.getHash().replace("\n","").replace(",", ""),
                             classBean.getName(),
                             LOC,
                             LCOM,
@@ -94,6 +101,9 @@ public class DevelopersVisitor implements CommitVisitor {
                             WMC,
                             TCC,
                             intHalstad,
+                            DIT,
+                            NOC,
+                            RFC,
                             commit.getMsg()
                     );
 
