@@ -21,9 +21,9 @@ public class MyStudy implements org.repodriller.Study {
     public void execute() {
 
             retrieveDataThread("shopizer", "shopizer");
-            /*retrieveDataThread("azure-sdk-for-java", "azure");
+            retrieveDataThread("azure-sdk-for-java", "azure");
             retrieveDataThread("zuul", "netflix");
-            retrieveDataThread("graal", "graal");*/
+            retrieveDataThread("graal", "graal");
     }
 
     public void retrieveDataThread(String projectName, final String outputFile) {
