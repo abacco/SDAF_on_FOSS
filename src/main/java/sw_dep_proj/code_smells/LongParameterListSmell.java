@@ -12,7 +12,7 @@ public class LongParameterListSmell {
         List<SingleVariableDeclaration> paramList = mb.getParameters();
 
         if(paramList.isEmpty()){
-            System.out.println("this method " + mb.getBelongingClass().getName() + " has no parameters");
+            //System.out.println("this method " + mb.getBelongingClass().getName(). + " has no parameters");
         }
         return paramList.size() >= 4;
     }

@@ -13,8 +13,18 @@ public class CodeSmellDetector {
 
     public static void main(String args[]) {
 
+        detectThread();
+    }
+
+    public static void detectThread(){
+
+        Thread innerThread = new Thread(() -> detectSmell("zuul"));
+        innerThread.start();
+    }
+
+    public static void detectSmell(String projectName){
         // Path to the directory containing all the projects under analysis
-        String pathToDirectory = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\homework sw_dep\\jpacman-framework";
+        String pathToDirectory = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\" + projectName;
         File experimentDirectory = new File(pathToDirectory);
 
         // Declaring Class-level code smell objects.
@@ -24,6 +34,8 @@ public class CodeSmellDetector {
         GodClassRule godClass = new GodClassRule();
         SpaghettiCodeRule spaghettiCode = new SpaghettiCodeRule();
         LongMethodRule longMethod = new LongMethodRule();
+
+        LongParameterListSmell lpls = new LongParameterListSmell();
 
         // The following rules are quite low for detecting smelly code components.
         // MisplacedClassRule misplacedClass = new MisplacedClassRule();
@@ -45,6 +57,7 @@ public class CodeSmellDetector {
                         boolean isGodClass = godClass.isGodClass(classBean);
                         boolean isSpaghettiCode = spaghettiCode.isSpaghettiCode(classBean);
 
+
                         System.out.println("Class: " + classBean.getBelongingPackage()
                                 + "." + classBean.getName() + "\n"
                                 + "		ClassDataShouldBePrivate: " + isClassDataShouldBePrivate + "\n"
@@ -55,8 +68,10 @@ public class CodeSmellDetector {
 
                         for(MethodBean methodBean: classBean.getMethods()) {
                             boolean isLongMethod = longMethod.isLongMethod(methodBean);
+                            boolean hasLongParameterList = lpls.hasLongParamMethodList(methodBean);
 
                             System.out.println("Method: " + methodBean.getName() + "\n"
+                                    + "     hasLongParameterList: " + hasLongParameterList + "\n"
                                     + "     LongMethod: " + isLongMethod);
                         }
                     }
@@ -66,5 +81,4 @@ public class CodeSmellDetector {
             }
         }
     }
-
 }
