@@ -7,22 +7,33 @@ import sw_dep_proj.beans.PackageBean;
 import sw_dep_proj.code_smells.utilities.FolderToJavaProjectConverter;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Vector;
 
 public class CodeSmellDetector {
 
     public static void main(String args[]) {
 
-        detectThread();
+        detectThread("zuul");
+        detectThread("azure-sdk-for-java");
+        detectThread("shopizer");
+        detectThread("graal");
     }
 
-    public static void detectThread(){
+    public static void detectThread(String projectName){
 
-        Thread innerThread = new Thread(() -> detectSmell("zuul"));
+        Thread innerThread = new Thread(() -> {
+            try {
+                detectSmell(projectName);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
         innerThread.start();
     }
 
-    public static void detectSmell(String projectName){
+    public static void detectSmell(String projectName) throws FileNotFoundException {
         // Path to the directory containing all the projects under analysis
         String pathToDirectory = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\" + projectName;
         File experimentDirectory = new File(pathToDirectory);
@@ -41,6 +52,8 @@ public class CodeSmellDetector {
         // MisplacedClassRule misplacedClass = new MisplacedClassRule();
         // FeatureEnvyRule featureEnvy = new FeatureEnvyRule();
 
+        PrintWriter printWriter = new PrintWriter(projectName.concat("Smells.txt"));
+        
         for(File project: experimentDirectory.listFiles()) {
             try {
                 // Method to convert a directory into a set of java packages.
@@ -66,6 +79,13 @@ public class CodeSmellDetector {
                                 + "		GodClass: " + isGodClass + "\n"
                                 + "		SpaghettiCode: " + isSpaghettiCode);
 
+                        printWriter.print(classBean.getBelongingPackage() + " " + classBean.getName() + "\n"
+                                + "		ClassDataShouldBePrivate: " + isClassDataShouldBePrivate + "\n"
+                                + "		ComplexClass: " + isComplexClass + "\n"
+                                + "		FunctionalDecomposition: " + isFunctionalDecomposition + "\n"
+                                + "		GodClass: " + isGodClass + "\n"
+                                + "		SpaghettiCode: " + isSpaghettiCode);
+
                         for(MethodBean methodBean: classBean.getMethods()) {
                             boolean isLongMethod = longMethod.isLongMethod(methodBean);
                             boolean hasLongParameterList = lpls.hasLongParamMethodList(methodBean);
@@ -73,12 +93,18 @@ public class CodeSmellDetector {
                             System.out.println("Method: " + methodBean.getName() + "\n"
                                     + "     hasLongParameterList: " + hasLongParameterList + "\n"
                                     + "     LongMethod: " + isLongMethod);
+
+                            printWriter.print("Method: " + methodBean.getName() + "\n"
+                                    + "     hasLongParameterList: " + hasLongParameterList + "\n"
+                                    + "     LongMethod: " + isLongMethod + "\n");
                         }
+
                     }
                 }
             } catch (CoreException e) {
                 e.printStackTrace();
             }
         }
+        printWriter.close();
     }
 }
