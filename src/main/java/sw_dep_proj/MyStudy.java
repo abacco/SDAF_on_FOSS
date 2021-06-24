@@ -34,7 +34,7 @@ public class MyStudy implements org.repodriller.Study {
         fromCal.set(2021, 5, 1);
 
         final Calendar toCal = Calendar.getInstance();
-        toCal.set(2021, 6, 1);
+        toCal.set(2021, 6, 24);
 
         Thread innerThread = new Thread() {
             public void run() {
