@@ -12,12 +12,12 @@ import java.util.Vector;
 
 public class CodeSmellDetector {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
 
-        detectThread("zuul");
-        detectThread("azure-sdk-for-java");
-        detectThread("shopizer");
-        detectThread("graal");
+        detectSmell("zuul");
+        detectSmell("azure-sdk-for-java");
+        detectSmell("shopizer");
+        detectSmell("graal");
     }
 
     private static boolean fal = false;
@@ -46,24 +46,20 @@ public class CodeSmellDetector {
         GodClassRule godClass = new GodClassRule();
         SpaghettiCodeRule spaghettiCode = new SpaghettiCodeRule();
         LongMethodRule longMethod = new LongMethodRule();
-
+        FeatureEnvyRule fev = new FeatureEnvyRule();
         LongParameterListSmell lpls = new LongParameterListSmell();
 
         // The following rules are quite low for detecting smelly code components.
-        // MisplacedClassRule misplacedClass = new MisplacedClassRule();
-        // FeatureEnvyRule featureEnvy = new FeatureEnvyRule();
 
         PrintWriter printWriter = new PrintWriter(projectName.concat("Smells.txt"));
 
-        CSVWriter c = new CSVWriter(new FileWriter("src/main/java/sw_dep_proj/final_data/"+ projectName.concat("output_smell_detector.csv")), ',', CSVWriter.NO_QUOTE_CHARACTER);
+        CSVWriter c = new CSVWriter(new FileWriter("src/main/java/sw_dep_proj/final_data/"+ projectName.concat("Output_smell_detector.csv")), ',', CSVWriter.NO_QUOTE_CHARACTER);
         String[] smells_name = {
                 "ClassDataShouldBePrivate",
                 "ComplexClass",
                 "FunctionalDecomposition",
                 "GodClass",
                 "SpaghettiCode",
-                "FeatureEnvy",
-                "MisplacedClass",
                 "MAINTAINABILITY"
         };
 
@@ -144,13 +140,13 @@ public class CodeSmellDetector {
                                     + "     hasLongParameterList: " + hasLongParameterList + "\n"
                                     + "     LongMethod: " + isLongMethod + "\n");
                         }
-
                     }
                 }
             } catch (CoreException e) {
                 e.printStackTrace();
             }
         }
+        c.close();
         printWriter.close();
     }
 }

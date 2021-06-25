@@ -2,6 +2,7 @@ package sw_dep_proj.theEntireFlow;
 
 import com.opencsv.CSVWriter;
 import org.apache.commons.lang3.ArrayUtils;
+import sw_dep_proj.MyStudy;
 import sw_dep_proj.code_smells.CodeSmellDetector;
 
 import java.io.*;
@@ -27,9 +28,9 @@ public class CompleteFlow {
 
     public static void mergeCsv(String projectName) throws IOException {
         BufferedReader csvReader = new BufferedReader(new FileReader("src/main/java/final_data/" + projectName + "Dataset.csv"));
-        BufferedReader csvReader2 = new BufferedReader(new FileReader("src/main/java/final_data/" + "projectNameoutput_smell_detector2.csv"));
+        BufferedReader csvReader2 = new BufferedReader(new FileReader("src/main/java/final_data/" + projectName + "output_smell_detector2.csv"));
 
-        CSVWriter c = new CSVWriter(new FileWriter("src/main/java/final_data/real_dataset.csv"), ',', CSVWriter.NO_QUOTE_CHARACTER);
+        CSVWriter c = new CSVWriter(new FileWriter("src/main/java/final_data/" + projectName.concat("real_dataset.csv")), ',', CSVWriter.NO_QUOTE_CHARACTER);
 
         String row, row2;
         while ((row = csvReader.readLine()) != null && (row2 = csvReader2.readLine()) != null) {
