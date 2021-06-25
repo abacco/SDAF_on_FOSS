@@ -1,6 +1,5 @@
-package ml;
+package sw_dep_proj.ml;
 
-import weka.classifiers.Classifier;
 import weka.classifiers.trees.RandomForest;
 
 public class PipelineRunner {

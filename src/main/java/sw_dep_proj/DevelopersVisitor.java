@@ -16,6 +16,7 @@ import sw_dep_proj.metrics.FileUtility;
 import sw_dep_proj.parser.ClassParser;
 import sw_dep_proj.parser.CodeParser;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
@@ -132,6 +133,26 @@ public class DevelopersVisitor implements CommitVisitor {
                             commit.getMsg()
                     );
 
+                    meanLoc = meanLoc / iterations;
+                    meanLcom = meanLcom / iterations;
+                    meanCbo = meanCbo / iterations;
+                    meanEloc = meanEloc / iterations;
+                    meanCoh = meanCoh / iterations;
+                    meanWmc = meanWmc / iterations;
+                    meanTcc = meanTcc / iterations;
+                    meanLcc = meanLcc / iterations;
+                    meanHalstead = meanHalstead / iterations;
+                    meanDit = meanDit / iterations;
+                    meanNoc = meanNoc / iterations;
+                    meanRfc = meanRfc / iterations;
+
+                    impactingMetricsCsv(
+                            className,
+                            locRule(LOC, meanLoc), lcomRule(LCOM, meanLcom), cboRule(CBO, meanCbo),
+                            elocRule(ELOC, meanEloc), cohRule(COH, meanCoh), wmcRule(WMC, meanWmc),
+                            tccRule(TCC, meanTcc), lccRule(LCC, meanLcc), halsteadRule(intHalstead, meanHalstead),
+                            ditRule(DIT, meanDit), nocRule(NOC, meanNoc), rfcRule(RFC, meanRfc)
+                    );
                 } catch (IOException ioe){
                     System.out.println("Reading failed");
                 }
@@ -139,38 +160,26 @@ public class DevelopersVisitor implements CommitVisitor {
                     System.out.println("IOB caught, continuing with another file");
                 }
             }
+/*            System.out.println( "mean Loc is: " + meanLoc + "\n" +
+                    "mean Lcom is: " + meanLcom + "\n" +
+                    "mean CBO is: " + meanCbo + "\n" +
+                    "mean Eloc is: " + meanEloc + "\n" +
+                    "mean Coh is: " + meanCoh + "\n" +
+                    "mean Wmc is: " + meanWmc + "\n" +
+                    "mean Tcc is: " + meanTcc + "\n" +
+                    "mean Lcc is: " + meanLcc + "\n" +
+                    "mean Halstead is: " + meanHalstead + "\n" +
+                    "mean Dit is: " + meanDit + "\n" +
+                    "mean Noc is: " + meanNoc + "\n" +
+                    "mean Rfc is: " + meanRfc);*/
+/*            impactingMetricsCsv(
+                    className,
+                    locRule(LOC, meanLoc), lcomRule(LCOM, meanLcom), cboRule(CBO, meanCbo),
+                    elocRule(ELOC, meanEloc), cohRule(COH, meanCoh), wmcRule(WMC, meanWmc),
+                    tccRule(TCC, meanTcc), lccRule(LCC, meanLcc), halsteadRule(intHalstead, meanHalstead),
+                    ditRule(DIT, meanDit), nocRule(NOC, meanNoc), rfcRule(RFC, meanRfc)
+            );*/
         }
-        meanLoc = meanLoc / iterations;
-        meanLcom = meanLcom / iterations;
-        meanCbo = meanCbo / iterations;
-        meanEloc = meanEloc / iterations;
-        meanCoh = meanCoh / iterations;
-        meanWmc = meanWmc / iterations;
-        meanTcc = meanTcc / iterations;
-        meanLcc = meanLcc / iterations;
-        meanHalstead = meanHalstead / iterations;
-        meanDit = meanDit / iterations;
-        meanNoc = meanNoc / iterations;
-        meanRfc = meanRfc / iterations;
-        System.out.println( "mean Loc is: " + meanLoc + "\n" +
-                            "mean Lcom is: " + meanLcom + "\n" +
-                            "mean CBO is: " + meanCbo + "\n" +
-                            "mean Eloc is: " + meanEloc + "\n" +
-                            "mean Coh is: " + meanCoh + "\n" +
-                            "mean Wmc is: " + meanWmc + "\n" +
-                            "mean Tcc is: " + meanTcc + "\n" +
-                            "mean Lcc is: " + meanLcc + "\n" +
-                            "mean Halstead is: " + meanHalstead + "\n" +
-                            "mean Dit is: " + meanDit + "\n" +
-                            "mean Noc is: " + meanNoc + "\n" +
-                            "mean Rfc is: " + meanRfc);
-        impactingMetricsCsv(
-                className,
-                locRule(LOC, meanLoc), lcomRule(LCOM, meanLcom), cboRule(CBO, meanCbo),
-                elocRule(ELOC, meanEloc), cohRule(COH, meanCoh), wmcRule(WMC, meanWmc),
-                tccRule(TCC, meanTcc), lccRule(LCC, meanLcc), halsteadRule(intHalstead, meanHalstead),
-                ditRule(DIT, meanDit), nocRule(NOC, meanNoc), rfcRule(RFC, meanRfc)
-        );
     }
 
     // we need to set range in order to evaluate maintainability

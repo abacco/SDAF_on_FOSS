@@ -61,6 +61,19 @@
           <artifactId>org.eclipse.jdt.core</artifactId>
           <version>3.24.0</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.opencsv</groupId>
+        <artifactId>opencsv</artifactId>
+        <version>4.4</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/nz.ac.waikato.cms.weka/weka-stable -->
+      <dependency>
+        <groupId>nz.ac.waikato.cms.weka</groupId>
+        <artifactId>weka-dev</artifactId>
+        <version>3.9.5</version>
+      </dependency>
   </dependencies>
 
   <build>

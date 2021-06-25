@@ -1,14 +1,13 @@
 package sw_dep_proj.code_smells;
 
+import com.opencsv.CSVWriter;
 import org.eclipse.core.runtime.CoreException;
 import sw_dep_proj.beans.ClassBean;
 import sw_dep_proj.beans.MethodBean;
 import sw_dep_proj.beans.PackageBean;
 import sw_dep_proj.code_smells.utilities.FolderToJavaProjectConverter;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Vector;
 
 public class CodeSmellDetector {
@@ -21,19 +20,21 @@ public class CodeSmellDetector {
         detectThread("graal");
     }
 
+    private static boolean fal = false;
+
     public static void detectThread(String projectName){
 
         Thread innerThread = new Thread(() -> {
             try {
                 detectSmell(projectName);
-            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });
         innerThread.start();
     }
 
-    public static void detectSmell(String projectName) throws FileNotFoundException {
+    public static void detectSmell(String projectName) throws IOException {
         // Path to the directory containing all the projects under analysis
         String pathToDirectory = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\" + projectName;
         File experimentDirectory = new File(pathToDirectory);
@@ -53,6 +54,23 @@ public class CodeSmellDetector {
         // FeatureEnvyRule featureEnvy = new FeatureEnvyRule();
 
         PrintWriter printWriter = new PrintWriter(projectName.concat("Smells.txt"));
+
+        CSVWriter c = new CSVWriter(new FileWriter("src/main/java/sw_dep_proj/final_data/"+ projectName.concat("output_smell_detector.csv")), ',', CSVWriter.NO_QUOTE_CHARACTER);
+        String[] smells_name = {
+                "ClassDataShouldBePrivate",
+                "ComplexClass",
+                "FunctionalDecomposition",
+                "GodClass",
+                "SpaghettiCode",
+                "FeatureEnvy",
+                "MisplacedClass",
+                "MAINTAINABILITY"
+        };
+
+        if(!fal) {
+            c.writeNext(smells_name);
+            fal = true;
+        }
         
         for(File project: experimentDirectory.listFiles()) {
             try {
@@ -70,6 +88,34 @@ public class CodeSmellDetector {
                         boolean isGodClass = godClass.isGodClass(classBean);
                         boolean isSpaghettiCode = spaghettiCode.isSpaghettiCode(classBean);
 
+                        int classDataPrivate_int = (isClassDataShouldBePrivate) ? 1:0;
+                        int complexClass_int = (isComplexClass) ? 1:0;
+                        int functionalDecomposition_int = (isFunctionalDecomposition) ? 1:0;
+                        int godClass_int = (isGodClass) ? 1:0;
+                        int spaghCode = (isSpaghettiCode) ? 1:0;
+
+                        int maintainability_value = classDataPrivate_int + complexClass_int + functionalDecomposition_int +
+                                godClass_int + spaghCode;
+
+                        String maintainability_str;
+
+                        if(maintainability_value >= 1){ // one or more smell detected
+                            maintainability_str = "FALSE";
+                        }
+                        else{
+                            maintainability_str = "TRUE";
+                        }
+
+                        String[] booleans = {
+                                String.valueOf(classDataPrivate_int),
+                                String.valueOf(complexClass_int),
+                                String.valueOf(functionalDecomposition_int),
+                                String.valueOf(godClass_int),
+                                String.valueOf(spaghCode),
+                                maintainability_str
+                        };
+
+                        c.writeNext(booleans);
 
                         System.out.println("Class: " + classBean.getBelongingPackage()
                                 + "." + classBean.getName() + "\n"

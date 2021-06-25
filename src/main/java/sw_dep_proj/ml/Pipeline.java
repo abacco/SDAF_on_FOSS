@@ -1,22 +1,22 @@
-package ml;
+package sw_dep_proj.ml;
+
+import weka.attributeSelection.AttributeSelection;
+import weka.attributeSelection.InfoGainAttributeEval;
+import weka.attributeSelection.Ranker;
+import weka.classifiers.Classifier;
+import weka.classifiers.Evaluation;
+import weka.core.Attribute;
+import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSource;
+import weka.filters.Filter;
+import weka.filters.supervised.instance.ClassBalancer;
+import weka.filters.unsupervised.attribute.Remove;
 
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import weka.attributeSelection.AttributeSelection;
-import weka.attributeSelection.InfoGainAttributeEval;
-import weka.attributeSelection.Ranker;
-import weka.classifiers.Classifier;
-import weka.classifiers.Evaluation;
-import weka.classifiers.trees.J48;
-import weka.core.Attribute;
-import weka.core.Instances;
-import weka.filters.Filter;
-import weka.core.converters.ConverterUtils.DataSource;
-import weka.filters.supervised.instance.ClassBalancer;
-import weka.filters.unsupervised.attribute.Remove;
 
 public class Pipeline {
 
@@ -51,10 +51,9 @@ public class Pipeline {
             // Suppose that, after the analysis of the attributes, we would like to remove the attributes
             // 'metric1' and 'metric5'. We create the list of attributes to remove.
             ArrayList<String> attToRemove = new ArrayList<>();
+            attToRemove.add("Commit Hash");
+            attToRemove.add("Class Name");
             attToRemove.add("MESSAGE");
-            attToRemove.add("DATE");
-            attToRemove.add("FILENAME");
-            attToRemove.add("CHANGE TYPE");
             // MESSAGE,DATE,FILENAME,CHANGE TYPE
             // choose the relevant metric from the previous step, let's remove all the metric that are not relevant for the detected smells
 
