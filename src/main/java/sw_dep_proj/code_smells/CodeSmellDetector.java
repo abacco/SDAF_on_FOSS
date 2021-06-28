@@ -8,15 +8,17 @@ import sw_dep_proj.beans.PackageBean;
 import sw_dep_proj.code_smells.utilities.FolderToJavaProjectConverter;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Vector;
 
 public class CodeSmellDetector {
 
     public static void main(String args[]) throws IOException {
 
-        detectSmell("zuul");
+/*        detectSmell("zuul");
         detectSmell("azure-sdk-for-java");
-        detectSmell("shopizer");
+        detectSmell("shopizer");*/
         detectSmell("graal");
     }
 
@@ -128,9 +130,11 @@ public class CodeSmellDetector {
                                 + "		GodClass: " + isGodClass + "\n"
                                 + "		SpaghettiCode: " + isSpaghettiCode);
 
+                        boolean isLongMethod, hasLongParameterList;
+                        ArrayList<String> booleans2 = new ArrayList<>();
                         for(MethodBean methodBean: classBean.getMethods()) {
-                            boolean isLongMethod = longMethod.isLongMethod(methodBean);
-                            boolean hasLongParameterList = lpls.hasLongParamMethodList(methodBean);
+                            isLongMethod = longMethod.isLongMethod(methodBean);
+                            hasLongParameterList = lpls.hasLongParamMethodList(methodBean);
 
                             System.out.println("Method: " + methodBean.getName() + "\n"
                                     + "     hasLongParameterList: " + hasLongParameterList + "\n"
@@ -139,6 +143,7 @@ public class CodeSmellDetector {
                             printWriter.print("Method: " + methodBean.getName() + "\n"
                                     + "     hasLongParameterList: " + hasLongParameterList + "\n"
                                     + "     LongMethod: " + isLongMethod + "\n");
+
                         }
                     }
                 }

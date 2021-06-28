@@ -20,10 +20,13 @@ public class MyStudy implements org.repodriller.Study {
 
     public void execute() {
 
-            retrieveDataThread("shopizer", "shopizer");
-            retrieveDataThread("azure-sdk-for-java", "azure");
-            retrieveDataThread("graal", "graal");
-            retrieveDataThread("zuul", "netflix");
+/*            retrieveDataThread("shopizer", "shopizer");
+
+        retrieveDataThread("graal", "graal");
+        retrieveDataThread("azure-sdk-for-java", "azure");*/
+
+        retrieveDataThread("zuul", "netflix");
+
 
     }
 
@@ -32,7 +35,7 @@ public class MyStudy implements org.repodriller.Study {
         final String realPath = "C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\" + projectName;
 
         final Calendar fromCal = Calendar.getInstance();
-        fromCal.set(2021, 5, 1);
+        fromCal.set(2021, 3, 1);
 
         final Calendar toCal = Calendar.getInstance();
         toCal.set(2021, 6, 24);

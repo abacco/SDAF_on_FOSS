@@ -12,15 +12,15 @@ import sw_dep_proj.ml.PipelineRunner;
 
 public class CompleteFlow {
 
-    public static void main(String args[]) throws IOException, SQLException {
+    public static void main(String args[]) throws IOException, SQLException, InterruptedException {
 
         MyStudy.main(null);
         CodeSmellDetector.main(null);
 
-        mergeCsv("azure");
+/*        mergeCsv("azure");
         mergeCsv("graal");
         mergeCsv("netflix");
-        mergeCsv("shopizer");
+        mergeCsv("shopizer");*/
 
         PipelineRunner.main(null);
 

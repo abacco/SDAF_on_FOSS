@@ -26,17 +26,19 @@ public class Pipeline {
             // Getting the data source, namely the input data to manipulate when creating the machine learner.
             DataSource source = new DataSource(dataset);
 
-            Attribute maintainability = new Attribute("Maintainability");
+            //Attribute maintainability = new Attribute("Maintainability");
 
             // Getting the instances contained in the dataset, we will use them during the various steps.
-            Instances instances = source.getDataSet();
+            Instances instances = source.getDataSet();//source.getDataSet();
 
-            instances.insertAttributeAt(maintainability, instances.numAttributes()-1);
+            instances.setClassIndex(instances.numAttributes()-1);
+            //instances.insertAttributeAt(maintainability, instances.numAttributes()-1);
+            //instances.setClassIndex(instances.numAttributes()-1);
 
-                if (instances.classIndex() == -1) {
-                    System.out.println("reset index...");
-                    instances.setClassIndex(instances.numAttributes()-1);
-                }
+            if (instances.classIndex() == -1) {
+                System.out.println("reset index...");
+                instances.setClassIndex(instances.numAttributes()-1);
+            }
             System.out.println("Class Index " + instances.classIndex() + "----------------------------------------");
 
             // Let's investigate the dataset. We will print number of attributes and instances.
@@ -53,7 +55,7 @@ public class Pipeline {
             ArrayList<String> attToRemove = new ArrayList<>();
             attToRemove.add("Commit Hash");
             attToRemove.add("Class Name");
-            attToRemove.add("MESSAGE");
+            //attToRemove.add("MESSAGE");
             // MESSAGE,DATE,FILENAME,CHANGE TYPE
             // choose the relevant metric from the previous step, let's remove all the metric that are not relevant for the detected smells
 
@@ -96,7 +98,7 @@ public class Pipeline {
             //int[] indices = attSelect.selectedAttributes();
 
             // Let's pretty print the results of the InfoGain algorithm.
-            File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\homework_sw_dep\\src\\main\\java\\final_data\\info_gain.csv");
+            File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\info_gain.csv");
             PrintWriter pw1 = new PrintWriter(igOutput);
 
             // In particular, we will convert the raw output of the algorithm in a csv file.

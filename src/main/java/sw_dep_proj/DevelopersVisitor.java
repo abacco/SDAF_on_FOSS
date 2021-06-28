@@ -130,7 +130,7 @@ public class DevelopersVisitor implements CommitVisitor {
                             DIT,
                             NOC,
                             RFC,
-                            commit.getMsg()
+                            commit.getMsg().replace("\n","").replace(",", "")
                     );
 
                     meanLoc = meanLoc / iterations;
