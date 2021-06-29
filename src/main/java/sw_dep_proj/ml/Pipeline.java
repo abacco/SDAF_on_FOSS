@@ -5,7 +5,6 @@ import weka.attributeSelection.InfoGainAttributeEval;
 import weka.attributeSelection.Ranker;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
-import weka.core.Attribute;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
@@ -26,14 +25,11 @@ public class Pipeline {
             // Getting the data source, namely the input data to manipulate when creating the machine learner.
             DataSource source = new DataSource(dataset);
 
-            //Attribute maintainability = new Attribute("Maintainability");
 
             // Getting the instances contained in the dataset, we will use them during the various steps.
             Instances instances = source.getDataSet();//source.getDataSet();
 
             instances.setClassIndex(instances.numAttributes()-1);
-            //instances.insertAttributeAt(maintainability, instances.numAttributes()-1);
-            //instances.setClassIndex(instances.numAttributes()-1);
 
             if (instances.classIndex() == -1) {
                 System.out.println("reset index...");
@@ -51,12 +47,10 @@ public class Pipeline {
             Pipeline.infoGain(instances);
 
             // Suppose that, after the analysis of the attributes, we would like to remove the attributes
-            // 'metric1' and 'metric5'. We create the list of attributes to remove.
             ArrayList<String> attToRemove = new ArrayList<>();
             attToRemove.add("Commit Hash");
             attToRemove.add("Class Name");
             //attToRemove.add("MESSAGE");
-            // MESSAGE,DATE,FILENAME,CHANGE TYPE
             // choose the relevant metric from the previous step, let's remove all the metric that are not relevant for the detected smells
 
             // Then, we create a new filter that specifies the attributes to remove.
@@ -95,7 +89,6 @@ public class Pipeline {
         try {
             // Now, we just run the attribute selection method.
             attSelect.SelectAttributes(data); // Unsupported attribute - it was uncommented
-            //int[] indices = attSelect.selectedAttributes();
 
             // Let's pretty print the results of the InfoGain algorithm.
             File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\info_gainGraal.csv");

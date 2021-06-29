@@ -12,21 +12,11 @@ import java.io.IOException;
 public class PipelineRunner {
 
     public static void main(String args[]) throws IOException, InterruptedException {
-/*
-        Pipeline pipeline = new Pipeline("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\zuulOutput_smell_detector.csv", //+ "projectName" + "Dataset.csv",//"src\\main\\java\\sw_dep_proj\\final_data\\" + "projectName" + "Real_dataset.csv", // insert here the path of your dataset in input
-                "src/main/java/sw_dep_proj/final_data/netflix_ml_output.csv", // insert here the path to your output csv
-                new RandomForest());*/
 
-        /*mergeCSV("netflix");*/
-        //mergeCSV("graal");
+        mergeCSV("netflix");
+        mergeCSV("graal");
         Pipeline pipeline = new Pipeline("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\graal_real_dataset.csv", //+ "projectName" + "Dataset.csv",//"src\\main\\java\\sw_dep_proj\\final_data\\" + "projectName" + "Real_dataset.csv", // insert here the path of your dataset in input
                 "src/main/java/sw_dep_proj/final_data/graal_ml_output.csv", // insert here the path to your output csv
-                new RandomForest());
-    }
-
-    public static void pipelineForProj(String projectName){
-        Pipeline pipeline = new Pipeline("src/main/java/sw_dep_proj/csv/" + projectName + "Dataset.csv",//"src\\main\\java\\sw_dep_proj\\final_data\\" + projectName + "Real_dataset.csv", // insert here the path of your dataset in input
-                "src/main/java/sw_dep_proj/final_data/" + projectName + "_ml_output.csv", // insert here the path to your output csv
                 new RandomForest());
     }
 

@@ -16,25 +16,13 @@ public class CodeSmellDetector {
 
     public static void main(String args[]) throws IOException {
 
-/*        detectSmell("zuul");
+        detectSmell("zuul");
         detectSmell("azure-sdk-for-java");
-        detectSmell("shopizer");*/
+        detectSmell("shopizer");
         detectSmell("graal");
     }
 
     private static boolean fal = false;
-
-    public static void detectThread(String projectName){
-
-        Thread innerThread = new Thread(() -> {
-            try {
-                detectSmell(projectName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        innerThread.start();
-    }
 
     public static void detectSmell(String projectName) throws IOException {
         // Path to the directory containing all the projects under analysis

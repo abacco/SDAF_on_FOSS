@@ -51,7 +51,6 @@ public class DevelopersVisitor implements CommitVisitor {
                 // Afterwards, we start parsing the file.
                 CompilationUnit parsed;
                 try {
-                    //System.out.println("ciao sono qui");
                     // We exploit the parser capabilities to read a file and transform it in something usable for analysis.
                     parsed = codeParser.createParser(FileUtility.readFile(file.getFile().getAbsolutePath()));
                     // Just for your information, the following instruction means that we will
@@ -160,29 +159,9 @@ public class DevelopersVisitor implements CommitVisitor {
                     System.out.println("IOB caught, continuing with another file");
                 }
             }
-/*            System.out.println( "mean Loc is: " + meanLoc + "\n" +
-                    "mean Lcom is: " + meanLcom + "\n" +
-                    "mean CBO is: " + meanCbo + "\n" +
-                    "mean Eloc is: " + meanEloc + "\n" +
-                    "mean Coh is: " + meanCoh + "\n" +
-                    "mean Wmc is: " + meanWmc + "\n" +
-                    "mean Tcc is: " + meanTcc + "\n" +
-                    "mean Lcc is: " + meanLcc + "\n" +
-                    "mean Halstead is: " + meanHalstead + "\n" +
-                    "mean Dit is: " + meanDit + "\n" +
-                    "mean Noc is: " + meanNoc + "\n" +
-                    "mean Rfc is: " + meanRfc);*/
-/*            impactingMetricsCsv(
-                    className,
-                    locRule(LOC, meanLoc), lcomRule(LCOM, meanLcom), cboRule(CBO, meanCbo),
-                    elocRule(ELOC, meanEloc), cohRule(COH, meanCoh), wmcRule(WMC, meanWmc),
-                    tccRule(TCC, meanTcc), lccRule(LCC, meanLcc), halsteadRule(intHalstead, meanHalstead),
-                    ditRule(DIT, meanDit), nocRule(NOC, meanNoc), rfcRule(RFC, meanRfc)
-            );*/
         }
     }
 
-    // we need to set range in order to evaluate maintainability
     /*
     * LOC >= 200
     * LCOM >=
@@ -245,13 +224,12 @@ public class DevelopersVisitor implements CommitVisitor {
         return (rfc >= mrfc) ? 1:0;
     }
 
-    // scegli quale di questi vale 0.5, se sta roba vale + di 6, per
     public void impactingMetricsCsv(String className, int locRule, int lcomRule, int cboRule, int elocRule, int cohRule, int wmcRule, int tccRule, int lccRule, int halRule, int ditRule, int nocRule, int rfcRule){
         CSVFile meanCsv = new CSVFile("impactingMetricValues.csv");
         meanCsv.write("CLASS","LOC", "LCOM", "CBO", "ELOC", "COH", "WMC", "TCC", "LCC", "Halstead", "DIT", "NOC", "RFC", "MAINTAINABILITY");
         meanCsv.write(className, locRule, lcomRule, cboRule, elocRule, cohRule, wmcRule, tccRule, lccRule, halRule, ditRule, nocRule, rfcRule);
 
-        meanCsv.close(); // questo è il real-dataset
+        meanCsv.close();
     }
 }
 
