@@ -1,0 +1,2 @@
+TP;TN;FP;FN;Accuracy; Precision; Recall; fmeasure; areaUnderROC; MCC
+237.0;38.0;0.0;0.0;1.0;1.0;1.0;1.0;1.0;1.0

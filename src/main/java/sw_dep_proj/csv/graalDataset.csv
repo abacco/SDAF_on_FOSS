@@ -1,0 +1,277 @@
+Commit Hash,Class Name,LOC,LCOM,CBO,ELOC,COH,McCabe,TCC,LCC,HALSTAD,DIT,NOC,RFC,MESSAGE
+a8a80dc2c268417125c1c86cac15b4d1b4063bf8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Initialize system proxy support only once per process.
+43e18dd47c35d26903f912123187fae3039b96ce,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31447] Initialize the SnippetSignature primitive cache only once."
+4836134144a4733f6d8469b5c64d2487dbafa127,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-19768] Update Truffle import."
+bd34f5a08d476c909a42c7b2b860f85573a088a9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30433] Improve support for building images from modulepath."
+53f626b36861969cd8d77dd0c0ba79aad523ccec,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add support for hasIndices (d) flag in JavaScript regexps
+538ccbef145797386fd038a2590a9ce4319ae306,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,TRegex: Update CHANGELOG
+97fdff5dcd488b18342715e86c4d4df93d961293,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add more tests for RegexFlags
+82d4e04ddbc129215b3f8d0f4693b475ddc25320,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge with graal master.
+4e2bdc071569d6363bcfa9cacbbfe66a7ded407a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add logging to RemoveUnwindPhase
+e0cd94a3bde1cf062f70e59ff5e099682c5e45aa,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge remote-tracking branch 'origin/master' into ph/GR-30891
+ce363bce38390b8903744f90cb45c9f746636010,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Reduce visibility and rename `StaticProperty.isFinal()`. Decouple how the field value is stored by the object model from the metadata stored by the language implementation."
+60604f87584c5a2a2cefa07243e90ae039957cf2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Fix bug in AArch64MacroAssembler.cacheWriteback Addresses passed to cacheWriteback should use the BASE_REGISTER_ONLY addressing mode."
+8975aaf7d02cb79964d86c3bf811354b25f59e28,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Do not store System.out, .err, or .in as final. Else the Graal compiler would fold the read of these field values, making the corresponding set methods not effective on compiled methods."
+2800f943da87c54e23e3c905aeecaf83145d9f0c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Make sure Insight's iterateFrames sees similar frames as throw stack
+67e67b3b984905f2f9ddfb4ad9cc2007d36f6d18,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Replace Heap.getClassList with Heap.getInitializedClasses.
+f0a8692da2df2b6043a898c02614a9aa1e5a8ce0,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29629] Implement context pause and cancel using Truffle safepoints."
+d1587416ad00b1392dcfa69f41dbaa51985be2e1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31254] Remove UnknownTypeFlow."
+6c1ee8140518a0f139baa1d47761a57d6ae4e802,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31717] [GR-31679] Fix AArch64 assembly bugs."
+9693c4abd1ccfd5896098fb723924a651b2fa3cc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29937] Open package for .properties bundles."
+9bf955b33ef0f9760e1477149934472ef492253c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Skip frames from RootNode.isInternal()
+e0877ce7a54490f87313b7fa0868d90dbda1c4f9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-2339] Prepare SIMDVectorization for enablement."
+e9ddfb90978a31231e16aae7880c3d2b57a63ea3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30217] Create RTLD_DEFAULT handle for dlsym."
+580956d14eee8a158d631f6d9e272cc56e0fbeb4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-19951] Polishing Insight's iterateFrames."
+c6e31b7ea7eecb11fc4e72598dc52c1c3ae74aa2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix linking errors when AOTTrivialInline is disabled
+9bc7c67c4a6557f6091c499668d728cb1f7facb8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix WriteBarrierAdditionTest.
+51be28b8fcae16f74eeeda640b9304ecdb89b9ea,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-21522] Implement _pickle EE."
+814d25e9ddb75454e3085c61f9d276e4c12b1d6c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Cleanups
+a4c1350500d6e56461079ed21e8928672bab4e2f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-20927] Truffle can no longer be shadowed."
+53d80ec3dde6edc879fc42e5bb129a72481e194a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-21590] Update imports."
+3f23563b101e1dd92ec086136bc86351da17593f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31031] Add intrinsic for Reference.refersTo and PhantomReference.refersTo."
+652c8c6e64f4192adcf624f23f1978201c442327,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-28410] [GR-29318] [GR-29331] [GR-28906] [GR-28905] Compatibility fixes in the Python TRegex flavor."
+a2f55d781803fc450cddb4ad4941a83d4d6ba140,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-8072] Add field interceptors to AnalysisField."
+7e7d3682905ff20a40cf284dfad1385439cfd4d2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31748] Add support for hasIndices (d) flag in JavaScript regexps."
+df76e5c40effc59d8115fc7d556439e91cd0e3a3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30979] Clear security provider caches leaving only used providers."
+ecbf81606a16a9c8d532cdb2d08cb9eb857b638c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31570] Add helloworld microservice benchmarks to java_benchmarks."
+57d50d310cc9744ad9ae0e6afc63b1501217f167,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Address comments.
+5325d3b88f9b0c0cef30a6d8fa65649bb3abf5c8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31851] Fix linking errors when AOTTrivialInline is disabled."
+d61fe3ea8d00acb5d7688baa42ae20525e74a85c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Link against winhttp only on JDK 11 and newer.
+9c2cd4e855ae01b766597d69f26b5af6d6a8d729,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Style fix.
+0ac2f892db92dc91ab93def64937e3a6e9c3396e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31075] Fix vminfo computation for JMH benchmarks."
+5d4de7250d2277c656954107308a34888091189c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Do not lose allowBufferAccess flag when HostAccess is derived from an existing one.
+b866cb1ee3d0f9c67c7990d46710662aba8d806a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Adding some tests of allowBufferAccess flag of HostAccess.
+d72503b0217612578f16ec2f50097ae0739b8d8a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31859] Disable IC combining for compatible shapes."
+21d500232f63a0f76a028aa6c5c3629d8067b38e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31479] Introduce BoxNodeIdentityPhase."
+d4198c2f3b6faa78f263293a9404d1a02bd196c1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29529] Reinitialize DefaultProxySelector at runtime to support java.net.useSystemProxies."
+bcb7ee7d925edf89ea07db7fb45e055569d30556,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-23997] Periodic update of the graal import (2021-06-05)."
+bd480111fcf36eee027cf6492f468f4d869871cc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-19803] More precise stamps for conditional nodes."
+64536c3653c9eccd0dcecba0f0efb5c504e95e78,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31483] Writing a foreign array index that is not insertable or writable should throw in strict mode."
+fe47e64648e34312c3d2133a373d61bbd195be5e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,[GR-31107] Improved testability of license presenter.
+e78d3c016172cccc4e78653d207901936947e334,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Added a few more assertions.
+5afa4d0514270d3801f77fd758e0e6954d582c36,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge with master.
+c28ce4f4c39b5d2334e56da1e590d51108134ad4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31716] DebuggerSession.createPrimitiveValue() added, DebugValue.set(primitiveValue) is deprecated, DebugValue not associated with a parent value is not writable."
+0d45526e6a5112eae0667aa0609fc7732c1a149f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Fix crash on (old) glibc 2.17: Use __libc_dlsym instead of the hooked dlsym in eden_ctypeInit. Improve logging to better diagnose such errors in the future."
+45f1f90d779993950b78b0d3a6d23295b6df8442,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31912] pickletester.py: enable skipped test_clear_pickler_memo."
+28a3c9ed93f0c729e3447e49335eb03108969291,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Cleanups.
+6a09da193bd23a3d0642f8cbb73d9f0774df20b7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Prevent erroneous removal of exception branches when the exception object isn't thrown
+09c85b04341db130793a10c0e446f5acdc7924a7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Missing boundaries in C++ vtable access nodes.
+9b11dd58f026f196fd68874ea9332a44bda4e18e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Use RTLD_NOW to get libeden handle to avoid crashes on older glibc.
+4c5dcc7959284f30b1db692814c9839c43afdce4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Fix Class.forName(Module, String) throwing instead of returning null."
+5899c1b7779b658446f522bce74d282548e623b6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge remote-tracking branch 'origin/master' into ph/GR-30891
+5d7ab055f40f8c551ebf7514b399eb2ec0493360,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Add agent switch ""experimental-class-define-support""."
+152420880a9e40fd6036ef6c9eb6024c0ff99cfc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fetch shared library handles when libeden is loaded.
+540eff5e0b6edf7cffafba9fad5c874446d5299e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31092] Handle method handle species initialised at build time."
+ed9aa8077ab0b4624a8fed59d5edcf69f69d6233,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor wrapping test to be a remote value access test.
+d1d17b6b1ce622af13d1824e8ea9ee4355d24c15,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor allow value dispatch to be reused from host. (incomplete)
+9a5b0e8456d9cefe9c53f4ac6d1fce0edf7cadf0,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor rename host access to HostEngine.
+c3bed41574f6a88e26ec27d8c478c3c8825e3c31,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor do not use host to guest root node for thread spawn.
+aed2009b162609577a0d1936ee6765513fdb5e7d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor cleanup engine accessor and introduce host language service.
+faa493340145abbf156a5e114e9a7b0e3a4d8ba8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor split ToGuestNode for polyglot and host interop.
+5d5bf732560afc8fdc54a0053f08baba0dd41b84,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor make ToHostNode independent of PolyglotLanguageContext.
+e938c98a64cf617be94d0a4fd34a503c913d6761,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor move HostContext argument in ToHostNode.
+46328c2eb40e785e96b9a92774614f18bd275e40,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor introduce PolyglotToHostNode that indirectly calls ToHostNode.
+c367dd80857d6a750fbbbca7654254680a262c56,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor introduce PolyglotInteropErrors.
+907fe8f7a5b68e624641726ae6204d8b32984d00,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor introduce AbstractHostLanguage.
+718da124c4680115f0bb491c464ce3b94e919a9a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor better separation of host and polyglot.
+62b36b1c93772d1c7b5f55620971eb35185f7625,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor move host interop into separate package(1/2).
+ef1fbd9df42099aec0e2462489dcb8981a708a25,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor move host interop into separate package(2/2).
+a37f2c962910af80b08a98bdda9a40836e028c41,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor move host interop into its own project.
+110c7688b0a1fe4b8bcab0e480898e98553ae7e4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor cleanup visibility and unused code.
+c5940f701833dd3e8dd2027fd012dc46f4bfb8f6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor cleanup context type in polyglot value dispatch.
+845132ad1b3f9234b6c4a9d76855b8461151ed22,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Refactor use service lookup to lookup host language; Move host service to AbstractPolyglotImpl.
+9f54aab96e9f1911e408b87fff082a1961044653,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix ExceptionType should not be a TruffleObject.
+7443ee87b72389cc61026b7b3489b02a83265df3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Improve wrapper tests.
+3c321e0f39add225d2704f4304d46bbace308aa3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Make engine holder non-final to allow patching it in tests.
+28343f9c5ada75022fa924d65b2c379a1c6c783a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Allow engine to be configured to use host language only when built.
+92b0e81555e08c2a02ee374c0a96be7276bce2e6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Reenable assertion for non-null engine.
+f29179abadbf13ee722bed030119c37913cc843d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add boundaries for SLRemoteTest.
+67209b07f6e76f30eeb4cf45d5ac0db5bdcacde9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix rebase issues.
+4876e67b84e8c10ebdfe2236beb1da17553ce810,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add version-dependent workaround for older (< 2.17) glibc versions.
+172db5d6bd0212dedc37c042658f5e15f0beaecf,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Minor improvements.
+22ba280fa50d952906148d2d04d5686fa645ba56,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Write to all predefined class output directories with native-image-configure.
+7eb26306b2830069138d4560643f139a39ff26a5,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31329] Add Java-implemented math stub listener."
+6b756b7370d97a2fd8ce9ea57425ef32d5f69eec,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-19768] Update Truffle import."
+b985c27c75b76b0332535534e8a68499620598b2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Mark MonitorIdNodes with a shared MonitorExitNode
+f732c6ac98c8791a835eadfeb21f8c53536edbbd,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31883] Do not lose allowBufferAccess flag when HostAccess is derived from an existing one."
+e29147039c63845810a02a4d6c75f72d7e53cacf,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix glibc version comparison.
+f8f09e2e2e300551f83bfd292a61dd422d23694c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Ensure glibc version is parsed correctly.
+ca755f3626e0fa3991a57b25f4bb06cd489f98a1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,FastR: Bump version of fastr-recommended-pkgs.
+9117cc11bd347d8e70a956df00477d49b3ac1159,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Move duplicate CustomFieldValueTransformer to SVM core.
+2bbd6677cb0d2b51996bb29b8f0ebc573fb84533,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Clear NFI native allocation GC queue before persisting in native image.
+821b168b60c40728c4133514cfaec954afc2c196,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix asGuestValue needs to unbox polyglot values.
+03647b609380876529c2b9fdc563da1c72fef18c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix svm permissions needs to include the new host interop package.
+f587d7e610568bbc46556f1d498f5fa673d70afc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Sulong: Clear thread return value when joining with it
+ad90fca6048d4080d2c6392d7aed29cdfe4981db,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Sulong: Override RootNode.isInternal() to return a PE-constant value This fixes a performance warning due to a non PE-constant default implementation of isInternal() in Truffle."
+edae1cab752b08860d6cde5d2020d0bd84e291b2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Sulong: Formatting
+2836f3252aab7a0289cc7bcbf5c4e204e4151e3a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Sulong: Clear thread objects on join instead of on task completion
+8586c2e86016c964d341abbd048209c4cca74708,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add bench-common.libsonnet to share benchmarking building blocks
+7984c4d6840023a29e4695e1333f520e7b34999a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix host contexts must be patched too.
+c1753d6c52201a590cff1158ff9333d907f42edb,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Improve host/guest separation for entry point. Better handling for primitives and host values when they come back from the guest.
+c5b291f6e6d6089d9b1d650225e62daf7798b544,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Support null language for guest exception frames when the language is not available locally.
+944b326bdb530528cfb4f3a40e4ab5aec7d5f9da,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Cleanups, simplifications, and minor bugfixes."
+2b9c085e194fdc6f78ac4ff70a2ac5acc5cc8d1d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix typo in test.
+7fa6126b1cd793e6069b232e14518ed448a8c799,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,update visualvm to build 1046
+79d9269cdb022c34e79e144771d4dbf767146b08,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Bump overlay version
+b0c1ad03bbbbe48b8c6c3a7b6d70f03343a3589a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Improve jsonnet abstractions in benchmark command generation
+5b5f27d3bba26d8d90b37102ebe193ceaa14c8f1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix reviewer comments.
+ae4ac1d6b0901607f85f7e733bb28eb6a7c54cd3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove unused ASM dependency from polyglot.
+eba59d22d017912362a24529e463801fdf2443f9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add missing boundaries in LLVMInteropType.
+825d868ccfe9ac134aff8b0ecf5382aa344a11f3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Make spotbugs happy.
+d20b27a84716d4f222ef836b507c1893af55064b,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove accidentially added file.
+7121d7b42986c0df67857a32a3bfeaea5ec269f6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Use correct expected exception in C++ unittests.
+eeaf568983d1ffae58a6018dc77b223726fb8195,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix copyright headers.
+d457f4478d436d93462b9f1ff75b9cc782b40505,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Review comments
+a2003e0d7285a6502a3f2eb674d85f28a7e72391,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Update changelog
+ce9534348e3ea506344905bc3489c100f0c86ce9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add repo config for native image
+a2f6a051450db48610976ce6965b65254549e867,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix HostClassCache must not refer to HostLanguage to make the engine collectible if the HostAccess is still alive.
+af3ccbc9b5ec2952c50bf7a21e12ddce6aea9728,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix wrong class loader was used for host interop.
+5b09657da2fdfa168d709ce556e3d620ffcddecc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix invalid comment.
+e9166a984e4c73087713d79fdf0fa7d5e67f16fc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30891] Support class predefinitions."
+9d194b69031d393e7e743e147e06002743dcb089,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove unused method.
+55945834efb1f9280829c0fb57de3ac835e499d4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Return RTLD_DEFAULT as the namespace handle in dlsym + dlopen libdl.so.2 (full name).
+b105d5dc9957cbc15bdb5735ff5cc549cc012c02,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Calling of source functions Simplified.
+0f3b5121c5df6ba44933c01000a56e2171ffe74c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31841] Prevent erroneous removal of exception branches when the exception object isn't thrown."
+bccb76653e21816344ba893c25983a31868be461,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31843] Do not store System.out, .err, or .in as final."
+cce8608293827ae63ec4416c60b723f5b1652a78,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31951] Tweak Thread#wakeup spec to use a reasonable amount of Thread#wakeup calls"
+96674955c6e3e3e36d3045e99f324e2f5c528aad,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31847] Fix problems with NFI in context pre-initialization."
+9540432a04f29d60da39211615086052c1ed3360,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30472] [GR-27863] [GR-18878] [GR-30937] [GR-30728] [GR-30833] [GR-30804] Managed pthreads & synchronization primitives."
+ee260eb1e4ef12d1cba81de13bab566e7e09b4cc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31941] Update visualVM to build 1046."
+cfc061877bbf47d951e4d0b31f0268a5a060ce56,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"The default static object super class is Object. The GeneratorClassLoader is now a child of the one used to load the factory interface."
+c7a1b5b4e7a5cf4f2fdb8e1fece6f714f6853129,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Describe how class loaders of the factory and of the storage super class  are validated.
+68cada21dde7b2da3b51d920d6e503d6d5f2e7b6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Improve validation of factory interface and object super class. And add tests."
+63f56c1d480f58f62e6e05e414ed3ba15f3f0f9b,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Document public classes and methods of the Static Object Model.
+7c36816889bb1b0a6b6d9d78add3c2aa4fe8a7eb,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Print image output to stdout for build statistics
+3061677b82f3a44d7580db187d6bc08f05f7d24a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-24662] Jsonnet improvements in benchmark definitions."
+21b1048e751226bfd9b41f6464b69c604ff71c05,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Fix invalid code ""this"" @CachedLibrary expressions."
+14973f1abeb2ceb767e78258a160f8b6323e09f1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Clear specialization class instance always for multiple instances in resetAOT.
+685370d105b31fbf1cf0200dd9871f3a6175979c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Address first round of feedback.
+8a5194b2ee3fbf07add2f4f3a3999bba8d6ea828,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31177] Support iterators and hashes in debugger API."
+617d8b52d8f9f25a3d4a6c3093e4f94ecd9d5eec,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,InvocationPlugins for methods with more args.
+e2c5ebd48b6aea00f3b66f78669e56b154fd2637,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix ECJ warnings.
+798a9c8e5a2dafe943068a38c943e7f93fd01a4f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,More cleanups and minor fixes.
+253c51a0611a0f346028fe90641ef4ddb95c1336,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge with master.
+662602da9cacd3d5dde9d34b34e8c0a29f0882f1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Minor fix after merge.
+a59bbb23ba1b30c72243d49aadef1d049b7fca76,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Be more robust when running with SubstrateVM.
+067cc14dc28bb6a2b64818328f75ff29d89b1d2f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix formatting.
+519438f2d3dd0fbf527ccd7b7e94691aeae9f733,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix and language or context references should be usable in AOT prepared specialization.
+aa66a7456706c867439e512c6d5dd67bf16d4206,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Validate basic guaranteed recursion.
+3649a2114bdd161c5fac634ffaa151d5af1c0b19,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Use a simplified implementation for the IGV constant pool
+3f5d10e611ace26a2f00bd7120c461e234aaf3e8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add a recursion detection test involving libraries.
+11020600aae911a17a7a026c00c18caea64a0ea3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Share entries for POOL_STRING
+58e0ec5e3356eab1902a2e406477b3397b9cafe5,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix compile warning.
+d02b262ba760bb4261fdfd9eaf76e18f3fdcad8d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Avoid deoptimizations for context references in AOT.
+8234931ff5b53705a1b2bf995175b06ffb026ba6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix debug stepping can cause stack overflow errors for compiled call targets. (GR-31987)
+68a7a5b26e501a37df98e10e07ea0ba30fae3d0a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-22699] Refactor separate host language from polyglot implementation; Add remote RemoteSLTest."
+87130d3d5f44cedbfafe4d6187af9aa1196649f5,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31320] CompilationStatistics does not reliably report invalidation reasons."
+8b16cc1c9c96db87a23b43f4c962f622a46edf06,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Cut off more X11 methods when running in the headless mode
+2f4838d21b2acdd8d9d307301e8e232d0d69e747,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31059] Mark all MonitorIdNodes in irreducible lock regions."
+2f811ae4f61c971bd5259b3e336b4cb1f493ca3f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-28897] Agent support for generating configuration with origin information."
+71af8cf7b3cef483eaedc89db2b8b2bbeb18cbd3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,VA list readArrayElement() unwraps
+36fc8543131630fa8c41df4f7cdbe321478f20a1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Mention that properties stored as final might be constant-folded.
+3a7d7450acd0676105508d4f517874a3422303af,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix documentation of non-volatile property get and set methods.
+77a8d4825bc8596e6c5c7bf3eaf947a5f0655360,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix missing @Override in generated code.
+9951510c25b7b62bf7c1f5004c4d472cea5d3f3d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix typos in javadoc.
+894764a9cb60d4741d56bbedecb37ccdac294560,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31860] SIGSEGV during context initialization while looking up native symbol."
+e686f9c0fafa402f560eae88492e50a662b45658,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Avoid using host interop in unittests, so we can run those tests on native-image without extra config."
+716502486866b7b2c4e623ed6c31246861465053,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Pick up potential 'malloc' intrinsifications (e.g. from managed mode) in C++ constructor call.
+7d3fef28a6de323ed9a1d70046463427cfcb542a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"Always throw IllegalArgumentException when the shape does not match. Examples: * obj is not even of the right type at all * obj is or the wrong shape when using the field-based approach"
+281f2374ec0309b758e9736c4cd2eaee4faa8050,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Provide more CodeInfo offsets.
+39ec519e0b702b0e56dec058340aa2064bf09f0f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix behavior of shared caches that are used in guards.
+2ffa4b52cf63f1b0b99084738b11594fe02fc1cc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix typo in javadoc.
+bb0f6c895c0dec549011dda3c35f60bf066fd8aa,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31144] Fix the missing of ""s"" in format string."
+df672eef3f553c224fb98d2e135ad46cce65a77c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix do not assert thread lock if the node is not adoptable.
+71a95d28e91a3d176c82f98640f68396db343712,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix compiler warning
+948e2a90f0a46ed4acf1c350f2a0f5419bd3475c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Only throw assertion error if the shared cache is actually used in a guard.
+765f0b3b9b8eba278332860648b1025c8ea3d35d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31691] Initial JFR support."
+f96c5657a5553c4f7fc72f40b1e7ffbc63aaf40e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30277] Re-enable API checksum of recommended packages cache."
+5c8ba889941f708d7e312e7cfe175cddb1980e57,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31960] Sulong: VA list readArrayElement() unwraps."
+723a7007df6c905b62d5d1ec7b56b78b38f1e47d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Optimize subtypes iteration.
+3cd9f1b173515cefc9afc84c400b9b878c98b8b4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove assignable types verification type count limit.
+e700f6d631e47480078f6e9f84ee10dbd9f1e45d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-30871] Implement AOT preparation support for Truffle libraries."
+0818536c7af2bfdf4801c0a299aa80569bad683e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Only call findPoolType once during lookup
+3b81923c51d0e39d21d1943a42f57ff18acdcbbb,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,[GR-31947] PolyglotUncaughtExceptionHandler should not log CancelExecution.
+513ae6edc0ced5c98650c76a5491ce78c4ca047b,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-293] Disallow deduplication of ExplodeLoopNode."
+41cb943636760d634e42a4ecc4362e4fea592d8a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31761] InvocationPlugins for methods with more args."
+cd9c5c8a99080094f77b3e8509c03528f4226346,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix style
+00bf646c830942709cc9ea02a8029aef22ef527a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Prevent FileURLConnection from being reachable. Minor refactoring
+5b36483b26d452139b6b028fd5c96ed7e6dc1f72,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Improve printing of safe classes
+5013ca7c9d88bd12de2ebd24e3196a40d9044c9c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Deprecate --initialize-at-build-time
+6bae7c8d072c2311835f9a8936b1d1e8d7bdc045,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix race condition in lazy LLVM IR parsing.
+8a5125854ff6342c5c41b3674744cbcc465fc4a8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Bump required mx version
+1d19d95179d2864bd263035e46a254e0d4192c17,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Adapt to mx changes in benchSuiteVersion
+71fba02201f4b989510016059a842fdf56dc434f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge branch 'master' into resources
+d5495d9e817ee89928ee20b0376f7d409c879dc4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Style fixes
+83eb488303ab8b1a535e6c2d438eed712c12014e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Make sure wasm suite always returns a benchSuiteName
+dbe78abd4c604ca50f639d6a4c1eba0411166229,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-28769] Adapt to mx changes in benchSuiteVersion."
+10e34f86fc636b85c6993d41b0441b488f7e453e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Report origin with the class name
+9cb8cf2b2e1930b99f3c53220203b638a63fd0b7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31915] Defend against poor hashCode/equals behaviour in IGV ConstantPool."
+26703c9aa02a841c58cd7773e5a884672129cc79,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31500] Add basic support to memset structured interop types."
+8799187e7e0800ea43fbf80f0e3ab36527a6c8b7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Only intrinsify direct calls
+3a717259cd3cd52e157da5c7175a391ecca12086,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove failing assertion
+703a07e7a7c375ab809afdfe841f8581b90b5899,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix wrong Uninterruptible flags
+d749f2966faf276087da43ab5f30ecf19a833d47,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Rename old InlineBeforeAnalysis option
+bd9423bcb77efadab12f5adaca0a751f70a475a4,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove unnecessary code
+d714509d17c12c11ac49861f5d644466e8132ef6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix strengthen graph
+42591e631ab5554c401383a485f27421f48530fa,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix ImageHeapMap
+64edff813f16e4114e043999bb08349dc4926ccc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix IntegerSwitchNode
+c1a416fc4ecf91a471fdd985afee6af7adad1bc7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Apply invocation plugins when building reflection invoke graph
+b3c622d2d522a5e3840c1d760ad8e4a7998f3b8e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix decoding of GuardsStage
+1fab0c9c0c967e3b2f65913216eac084172b3690,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix handling of MemorySegmentProxy.scope in Truffle on JDK 16
+c8cad89595bb3a98760addcd721ddc97dc051f81,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Do not use ProfileBooleanNode for AOT compilation
+a43d01da01f5793a125cd807a5a52ebf69da14bc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Ensure proper initialization of external threads when entering Espresso.
+a6d646c3d3ae75fcd2f8ef2d404d12ffb0c2ee2e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Classes that access thread local values must not be automatically initialized at image build time
+180908f27dbdefb822938d4f447fea8a587cd011,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Inline before static analysis
+7e61e9b8d12a93cf3a405e0fe4c3654404b34bd1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31679] Refactor AArch64NodeMatchRules and ASIMD Bug Fixes."
+c100a992e76becdee8d98c5044505c1605b7d3a3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"FloatDivNode type assertion removal. The type assertion in FloatDivNode prevents the node being reused for custom stamps based on FloatStamp. Remove the assert to allow the node to be extended."
+b80629c3df2e50d85e0a787eb917f979550d68dd,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29907] [GR-31679] Refactor AArch64NodeMatchRules and ASIMD support."
+35a52649cd30214be0306ee6a2125f865722a4f7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-23997] Periodic update of the graal import (2021-06-11)."
+ab9bfcf776020dd9bf73673122bec6dd8898aabd,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-28460] New infrastructure for method inlining before static analysis."
+7dda3fe094f97f097afbc54e514745de83bd3825,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29238] Detailed reporting of class initialization."
+5f213b09ac0602a1e8036ad3115ec0e02a83259b,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add microservice benchmarks to all benchmarks to run on HotSpot
+3b9fbf5c0593b8cb37196523bd5ec703abe291f9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Removed method already defined in its parents
+05a686050a13e09e136655ce83824c02bba2d0e3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-26395] Periodic update of the graal import."
+383f918dbc7000d753f33d75dd4e7708de5bd766,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-28769] Add microservices benchmarks to all benchmarks to run on HotSpot."
+e2eba702e22fd708a15172211ac750656e5d7a7e,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-23724] Resources support for Native Image."
+eb6cc75d3f550172f2378185c090ccab7cf2fd2b,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31969] Document public classes and methods of the Static Object Model."
+cbc5a97e39f060108d9c245178ea358635d8ce55,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31987] Fix debug stepping can cause stack overflow errors for compiled call targets."
+6deecfd02a3de6b052d6c50e4dca8176e64d4cb9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Only scan for resources in jar if really a jar #3467
+d04a614aa1c1d22c2ca654fe08ba495c7f3aa53d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Add missing com.oracle.svm.core.VM.Java.Version symbol
+bf073f6d64963670a0b1612a05cbad5dbbeba136,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix mark SVM safepoint poll stub as reexecutable.
+dec3a9a3ee777fb42e0cc9e3b4e5b127f823c1ae,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix and re-enable truffle to truffle exception edge test.
+85ca2a426c9fa9482a2f91f9bf9f4dd6bb690e56,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Remove redundant prepareThread call (called by attachThread) on Thread.start substitution.
+e0c49858a6a78789e19e860e396cf01b52b794e7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31996] Fix behavior of shared caches that are used in guards."
+fe3783dd512a49811f5f1891c8cd1da1c4655745,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Trace removed security providers
+a920d6dfa3400349579be2308144e2484145d64a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,add bitcast from i1 to ivar
+368d23fcc5f5fc3b77c1c879a31f81010262eeb9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Relax check for identical toString in IGV encoder
+844d8aa0de9da90f71d273a8473e8ec5cc3968a0,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32000] Fix race condition in lazy LLVM IR parsing."
+51c257ab0b1246d28b7b5ac5fcca8e66fbdfb6c1,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-11313] Integrate C++ method calls over interop."
+2b9274fd8ec17f2a7f3f3554af5be9d45103fe22,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29304] [GR-30676] Do not check hasPendingSideEffectingActions() in runPendingSafepointActions()"
+0265c27a2c3d4711bb31f89c124f46a80f189f58,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Handle null type in RegisterFinalizerNode
+1545875fefcde06159a9c6a46928033589997fc7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Handle null type in ObjectCloneNode
+b097c12292e51720be6c16fb9a59768259661e5d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix AbstractObjectStamp.equals
+0e96136c6331481aa71efad390114d6102a376dc,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31499] Fix all-instantiated type flows for arrays of Cloneable and Serializable."
+2413a68102fd9ce4d9b09ca999958ee85fafe9f9,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32055] Remove assert checking for toString equality in IGV."
+11d72f7e9b048de385e8f7a0ede97cbeb040799d,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31992] Ensure proper initialization of external threads when entering Espresso."
+ca1ec6249aa627fc509fd885d75209d30d255387,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Fix microservice benchmark heap settings.
+2cfdfbace6e780644b299f9279002aad4e8f72c2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-2339] FloatDivNode type assertion removal."
+0bc0d9847708731e06140bd7c9160f0ee4977152,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Merge
+32fc4f415ef7e60d1facda3081b962301377175a,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,Apply rename
+c03bfc33d51872c5e891a6c72c47ac4f453c4f15,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32010] Remove FASTR_RELEASE jar distribution."
+3af91840225e3907c9be39aa5382bee08880abd7,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31947] PolyglotUncaughtExceptionHandler should not log CancelExecution."
+24856c948365fcb8e7267b99cdacb98bb49b337c,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32049] Add bitcast from i1 to ivar."
+50942d7d1be35d425293efd8f63a767162f6f532,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32037] Only scan for resources in jar if really a jar #3467."
+b6c0afb13d2ce032e22afe60b6cf9cc324ad3ff8,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31075] Reenable image build output for benchmarks."
+9495dc921feefaaa98b38d6b1ed2dc25823bc6f0,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31138] Provide more CodeInfo offsets."
+723d812e07fc3cfa62e3e860338f73da172a223f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31852] Cut off more X11 methods when running in the headless mode."
+3607f9458ffdc29c0cf7037ca4afc55c830b1043,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31215] Remove invalidation for second tier code installation until a JVMCI is available to make it non-entrant."
+9704c01a6c2fa4252c72a92e175a8ec8bded88f3,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31559] Fix mark SVM safepoint poll stub as reexecutable."
+3a528741aec868ae22d7a3d1abd754b15081cb30,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31107] Added support for remote licenses, URL specified by LICENSE rpmtag."
+c656cf921a39eb73f96ff1edef12b85eaeeb5b7f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31427] Add missing com.oracle.svm.core.VM.Java.Version symbol."
+f648801d7187ed2f567fd8a56bfe6435c9d6b5dd,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32036] Fix AbstractObjectStamp.equals."
+b1b5d44002f5af89c6ee0584e0cfa1649eda43b6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-29034] Fix and re-enable truffle to truffle exception edge test."
+62d292da67704eb576f5aef070fda5fb7caca4e2,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-31080] Move the docs sources in Graal/docs space by preserving website pages build."
+de4c232306625c956cc7bd48f6408e07d347a54f,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32058] Fix typo initalize to initialize."
+cf1ef9d22c2dda1729c96149fe5e4ea79b681db6,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32046] Fix microservice benchmark heap settings."
+b5338aa85d3f9a0e2c11e9e7dfc89ff7c8d25b07,GraalDirectives,439,1035,0,258,0,46,0,0,2541,0,0,48,"[GR-32040] Trace removed security providers.
+

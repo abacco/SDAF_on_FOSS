@@ -98,7 +98,7 @@ public class Pipeline {
             //int[] indices = attSelect.selectedAttributes();
 
             // Let's pretty print the results of the InfoGain algorithm.
-            File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\info_gain.csv");
+            File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\info_gainGraal.csv");
             PrintWriter pw1 = new PrintWriter(igOutput);
 
             // In particular, we will convert the raw output of the algorithm in a csv file.
@@ -136,7 +136,8 @@ public class Pipeline {
         int i = 0;
         for (String s : attToRemove) {
             System.out.println(s + "----------------------------------------------------");
-            indicesList.add(instances.attribute(s).index());
+            if(instances != null)
+                indicesList.add(instances.attribute(s).index());
             i++;
         }
         System.out.println(indicesList + "-------------------------------------------------");
