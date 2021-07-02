@@ -16,7 +16,6 @@ import sw_dep_proj.metrics.FileUtility;
 import sw_dep_proj.parser.ClassParser;
 import sw_dep_proj.parser.CodeParser;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
