@@ -146,6 +146,7 @@ public class DevelopersVisitor implements CommitVisitor {
                     meanRfc = meanRfc / iterations;
 
                     impactingMetricsCsv(
+                            classBean.getBelongingPackage(),
                             className,
                             locRule(LOC, meanLoc), lcomRule(LCOM, meanLcom), cboRule(CBO, meanCbo),
                             elocRule(ELOC, meanEloc), cohRule(COH, meanCoh), wmcRule(WMC, meanWmc),
@@ -224,10 +225,10 @@ public class DevelopersVisitor implements CommitVisitor {
         return (rfc >= mrfc) ? 1:0;
     }
 
-    public void impactingMetricsCsv(String className, int locRule, int lcomRule, int cboRule, int elocRule, int cohRule, int wmcRule, int tccRule, int lccRule, int halRule, int ditRule, int nocRule, int rfcRule){
+    public void impactingMetricsCsv(String packageName, String className, int locRule, int lcomRule, int cboRule, int elocRule, int cohRule, int wmcRule, int tccRule, int lccRule, int halRule, int ditRule, int nocRule, int rfcRule){
         CSVFile meanCsv = new CSVFile("impactingMetricValues.csv");
         meanCsv.write("CLASS","LOC", "LCOM", "CBO", "ELOC", "COH", "WMC", "TCC", "LCC", "Halstead", "DIT", "NOC", "RFC", "MAINTAINABILITY");
-        meanCsv.write(className, locRule, lcomRule, cboRule, elocRule, cohRule, wmcRule, tccRule, lccRule, halRule, ditRule, nocRule, rfcRule);
+        meanCsv.write(packageName, className, locRule, lcomRule, cboRule, elocRule, cohRule, wmcRule, tccRule, lccRule, halRule, ditRule, nocRule, rfcRule);
 
         meanCsv.close();
     }
