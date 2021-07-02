@@ -41,7 +41,7 @@ public class CodeSmellDetector {
 
         // The following rules are quite low for detecting smelly code components.
 
-        PrintWriter printWriter = new PrintWriter(projectName.concat("Smells.txt"));
+        PrintWriter printWriter = new PrintWriter(projectName.concat("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\other_data\\" + projectName + "Smells.txt"));
 
         CSVWriter c = new CSVWriter(new FileWriter("src/main/java/sw_dep_proj/final_data/"+ projectName.concat("Output_smell_detector.csv")), ',', CSVWriter.NO_QUOTE_CHARACTER);
         String[] smells_name = {

@@ -19,7 +19,7 @@ import java.util.Random;
 
 public class Pipeline {
 
-    public Pipeline(String dataset, String outputFilePath, Classifier classifier) {
+    public Pipeline(String dataset, String outputFilePath, Classifier classifier, String projectName) {
 
         try {
             // Getting the data source, namely the input data to manipulate when creating the machine learner.
@@ -44,7 +44,7 @@ public class Pipeline {
             System.out.println("Number of instances in the dataset: (# rows):    " + instances.size());
 
             // As a first step, let's investigate the dataset for possible multi-collinearity. We will rely on InfoGain.
-            Pipeline.infoGain(instances);
+            Pipeline.infoGain(instances, projectName);
 
             // Suppose that, after the analysis of the attributes, we would like to remove the attributes
             ArrayList<String> attToRemove = new ArrayList<>();
@@ -75,7 +75,7 @@ public class Pipeline {
      *
      *
      */
-    private static void infoGain(Instances data) {
+    private static void infoGain(Instances data, String projectName) {
         // Weka makes the class InfoGainAttributeEval available.
         InfoGainAttributeEval eval = new InfoGainAttributeEval();
         // We will need to specify that the evaluation has to rank attributes based on the gain provided.
@@ -91,7 +91,7 @@ public class Pipeline {
             attSelect.SelectAttributes(data); // Unsupported attribute - it was uncommented
 
             // Let's pretty print the results of the InfoGain algorithm.
-            File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\info_gainGraal.csv");
+            File igOutput = new File("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\"+projectName+"info_gain.csv");
             PrintWriter pw1 = new PrintWriter(igOutput);
 
             // In particular, we will convert the raw output of the algorithm in a csv file.
@@ -233,7 +233,7 @@ public class Pipeline {
                 File wekaOutput = new File(outputFilePath);
 
                 PrintWriter pw1 = new PrintWriter(wekaOutput);
-                pw1.write("TP;TN;FP;FN;Accuracy; Precision; Recall; fmeasure; areaUnderROC; MCC\n");
+                pw1.write("TP; TN; FP; FN; Accuracy; Precision; Recall; fmeasure; areaUnderROC; MCC\n");
                 pw1.write(tp + ";" + tn + ";" + fp + ";" + fn + ";" + accuracy + ";" + precision + ";" + recall + ";" + fmeasure + ";" + auc + ";" + MCC + "\n");
                 pw1.flush();
                 pw1.close();

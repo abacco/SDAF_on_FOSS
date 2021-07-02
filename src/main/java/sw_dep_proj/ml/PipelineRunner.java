@@ -15,9 +15,18 @@ public class PipelineRunner {
 
         mergeCSV("netflix");
         mergeCSV("graal");
-        Pipeline pipeline = new Pipeline("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\graal_real_dataset.csv", //+ "projectName" + "Dataset.csv",//"src\\main\\java\\sw_dep_proj\\final_data\\" + "projectName" + "Real_dataset.csv", // insert here the path of your dataset in input
+
+        Pipeline pipelineNetflix = new Pipeline("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\netflix_real_dataset.csv",  // insert here the path of your dataset in input
+                "src/main/java/sw_dep_proj/final_data/netflix_ml_output.csv", // insert here the path to your output csv
+                new RandomForest(), "netflix");
+
+        Pipeline pipelineGraal = new Pipeline("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\graal_real_dataset.csv",  // insert here the path of your dataset in input
                 "src/main/java/sw_dep_proj/final_data/graal_ml_output.csv", // insert here the path to your output csv
-                new RandomForest());
+                new RandomForest(), "graal");
+
+        Pipeline pipelineGraalAndNetflix = new Pipeline("C:\\Users\\bacco\\OneDrive\\Desktop\\progetti uni\\SDAF_on_FOSS\\src\\main\\java\\sw_dep_proj\\final_data\\graalAndNetflix_real_dataset.csv",  // insert here the path of your dataset in input
+                "src/main/java/sw_dep_proj/final_data/graalAndNetflix_ml_output.csv", // insert here the path to your output csv
+                new RandomForest(), "graalAndNetflix");
     }
 
     public static void mergeCSV(String projectName) throws IOException {
